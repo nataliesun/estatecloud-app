@@ -1,0 +1,19 @@
+@import '../variable.scss';
+
+.App {
+  padding-top: $medium-space;
+  padding-bottom: $medium-space;
+  max-width: $app-max-width;
+  margin: 0 auto;
+  color: $main-text-color;
+}
+
+.App__header {
+  padding-left: $medium-space;
+  padding-right: $medium-space;
+}
+
+.App__main {
+  margin-top: $medium-space;
+}
+

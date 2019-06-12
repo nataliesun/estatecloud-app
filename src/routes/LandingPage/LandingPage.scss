@@ -1,0 +1,25 @@
+@import '../../components/variable.scss';
+
+.LandingPage {
+  padding-left: $medium-space;
+  padding-right: $medium-space;
+
+  .hero {
+      height: 35vh;
+      width: 100%;
+  }
+
+  img {
+    height: 75px;
+  }
+
+
+  a {
+    text-decoration: none;
+    @include highlighted-button;
+  }
+
+  h3 {
+    margin: $medium-space 0;
+  }
+}

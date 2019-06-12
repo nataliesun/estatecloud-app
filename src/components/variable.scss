@@ -1,0 +1,15 @@
+$app-max-width: 960px;
+$medium-space: 20px;
+
+
+$button-highlight: rgb(255, 121, 121);
+$button-lowlight: #7979ff;
+$main-text-color: #444;
+
+@mixin highlighted-button($color: $button-highlight) {
+  background: $color;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 15px;
+  margin-left: 10px;
+}
