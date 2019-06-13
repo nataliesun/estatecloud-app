@@ -29,7 +29,7 @@
   margin-top: 10px;
 }
 
-.NavBar__not-logged-in {
+.NavBar__not-logged-in, .NavBar__logged-in {
   display: flex;
   flex: 1;
   align-items: center;

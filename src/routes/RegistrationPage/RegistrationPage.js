@@ -10,9 +10,10 @@ class RegistrationPage extends Component {
     },
   }
 
-  handleRegistrationSucess = user => {
+  handleRegistrationSuccess = user => {
+    console.log('mew')
     const { history } = this.props
-    history.push('/login')
+    history.push('/dashboard')
   }
 
   render() {
@@ -20,7 +21,7 @@ class RegistrationPage extends Component {
       <section className="RegistrationPage">
         <h2>Create an account</h2>
         <RegistrationForm
-          onRegistrationSucess={this.handleRegistrationSucess}
+          onRegistrationSuccess={this.handleRegistrationSuccess}
         />
       </section>
     );

@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import TokenService from '../../services/token-service'
 
 import './RegistrationForm.scss'
 
 class RegistrationForm extends Component {
+  static defaultProps = {
+    onRegistrationSuccess: () => { }
+  }
+
   state = { error: null }
 
   handleSubmit = ev => {
@@ -10,6 +15,17 @@ class RegistrationForm extends Component {
     const { first_name, last_name, email, password } = ev.target
 
     this.setState({ error: null })
+
+    TokenService.saveAuthToken(
+      TokenService.makeBasicAuthToken(email.value, password.value)
+    )
+
+    TokenService.saveLastName(last_name.value)
+    TokenService.saveFirstName(first_name.value)
+
+    console.log('hi')
+
+    this.props.onRegistrationSuccess()
 
   }
 

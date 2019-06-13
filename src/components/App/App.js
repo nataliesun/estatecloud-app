@@ -3,6 +3,8 @@ import { Route, Switch } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar'
 import LandingPage from '../../routes/LandingPage/LandingPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
+import Dashboard from '../../routes/Dashboard/Dashboard'
+import NewPropertyForm from '../../components/NewPropertyForm/NewPropertyForm'
 
 import './App.scss';
 
@@ -21,8 +23,9 @@ function App() {
           <Route exact path={'/'} component={LandingPage} />
           {/* <Route path={'/login'} component={LoginPage} /> */}
           <Route path={'/register'} component={RegistrationPage} />
-          {/* <Route path={'/home/:homeId'} component={HomePage} />
-          <Route component={NotFoundPage} /> */}
+          <Route path={'/dashboard'} component={Dashboard} />
+          <Route path={'/addProperty'} component={NewPropertyForm} />
+          {/* <Route component={NotFoundPage} /> */}
         </Switch>
       </main>
 
