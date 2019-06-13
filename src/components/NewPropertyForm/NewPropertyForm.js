@@ -1,18 +1,42 @@
 import React, { Component } from 'react';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker'
+import PropertyContext from '../../contexts/PropertyContext';
 
 import './NewPropertyForm.scss'
 
 class NewPropertyForm extends Component {
+  static contextType = PropertyContext
+
   state = {
     date: [new Date(), new Date()],
   }
 
   onDateChange = date => this.setState({ date })
 
+  handleSubmit = ev => {
+    ev.preventDefault()
+
+    const { address, city, state, status, rent_price, initial_price, mortgage_payment } = ev.target;
+
+    const newProperty = {
+      address: address.value,
+      city: city.value,
+      state: state.value,
+      status: status.value,
+      rent_price: rent_price.value,
+      initial_price: initial_price.value,
+      mortgage_payment: mortgage_payment.value
+    }
+
+    this.context.addProperty(newProperty)
+
+    this.props.history.push('/dashboard')
+
+  }
+
   render() {
     return (
-      <form className="NewPropertyForm">
+      <form className="NewPropertyForm" onSubmit={this.handleSubmit}>
         <div className="input-section">
           <label htmlFor="address">Address: </label>
           <input type="text" name="address" placeholder="321 Awesome Ave." required />
@@ -25,11 +49,26 @@ class NewPropertyForm extends Component {
 
         <div className="input-section">
           <label htmlFor="available">Available</label>
-          <input type="radio" name="available" />
+          <input
+            type="radio"
+            value="available"
+            id="available"
+            name="status"
+          />
           <label htmlFor="rented">Rented</label>
-          <input type="radio" name="rented" />
+          <input
+            type="radio"
+            value="rented"
+            id="rented"
+            name="status"
+          />
           <label htmlFor="occupied">Occupied</label>
-          <input type="radio" name="occupied" />
+          <input
+            type="radio"
+            value="occupied"
+            id="occupied"
+            name="status"
+          />
         </div>
 
         <div className="date-range">
@@ -41,15 +80,15 @@ class NewPropertyForm extends Component {
 
         <div className="input-section">
           <label htmlFor="rent-price">Rent price:</label>
-          <input type="number" name="rent-price" placeholder="2000" />
+          <input type="number" name="rent_price" placeholder="2000" />
 
 
-          <label htmlFor="intial-price">Inital price:</label>
-          <input type="number" name="intial-price" placeholder="1000000" />
+          <label htmlFor="intial-price">Initial price:</label>
+          <input type="number" name="initial_price" placeholder="1000000" />
 
 
           <label htmlFor="mortgage-payment">Mortgage payment: </label>
-          <input type="number" name="mortgage-payment" placeholder="1500" />
+          <input type="number" name="mortgage_payment" placeholder="1500" />
         </div>
 
         <div className="submit-buttons">
