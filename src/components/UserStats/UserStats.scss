@@ -1,0 +1,54 @@
+@import '../variables.scss';
+
+.UserStats {
+  // border: 2px solid rgb(235, 235, 235);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  min-height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  box-shadow:  0 4px 8px 0 rgba(172, 172, 172, 0.2), 0 6px 20px 0 rgba(145, 145, 145, 0.19);
+
+  .stat-container {
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+    border: 1px solid rgb(235, 235, 235);
+  
+  }
+
+  .other-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    width: 50%;
+
+    &:first-of-type {
+      border-right: 1px solid rgb(235, 235, 235);
+    }
+
+    p {
+      color: $main-text-color;
+      opacity: .35;
+    }
+  }
+
+  .portfolio_value {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    border-left: 1px solid rgb(235, 235, 235);
+    border-right: 1px solid rgb(235, 235, 235);
+    width: 100%;
+    flex: 1;
+    
+    p {
+      color: $main-text-color;
+      opacity: .35;
+    }
+  }
+}

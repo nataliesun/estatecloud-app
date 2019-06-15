@@ -1,30 +1,33 @@
 export const properties = [
   {
-    address: "543 meep st",
+    address: "543 Watermelon ave",
     city: "torrance",
     state: "ca",
-    status: "rented",
-    rent_price: "2000",
+    status: "occupied",
+    rent_price: "0",
     initial_price: "100000",
-    mortgage_payment: "100"
+    mortgage_payment: "0",
+    dates: [new Date(2019, 3, 5), new Date(2019, 6, 30)]
   },
   {
-    address: "543 meep st",
+    address: "23 meep st",
     city: "torrance",
     state: "ca",
     status: "rented",
-    rent_price: "2000",
+    rent_price: "1500",
     initial_price: "100000",
-    mortgage_payment: "100"
+    mortgage_payment: "1000",
+    dates: [new Date(2019, 3, 5), new Date(2019, 6, 30)]
   },
   {
-    address: "543 meep st",
-    city: "torrance",
+    address: "64 Blob way",
+    city: "Redondo Beach",
     state: "ca",
-    status: "rented",
-    rent_price: "2000",
+    status: "available",
+    rent_price: "0",
     initial_price: "100000",
-    mortgage_payment: "100"
+    mortgage_payment: "1200",
+    dates: [new Date(2019, 3, 5), new Date(2019, 6, 30)]
   }
 ]
 

@@ -6,31 +6,44 @@ import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import Dashboard from '../../routes/Dashboard/Dashboard'
 import NewPropertyForm from '../../components/NewPropertyForm/NewPropertyForm'
 
+import properties from '../../components/dummyProperties';
+import PropertyContext from '../../contexts/PropertyContext';
+
 import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App__header">
-        <NavBar />
-      </header>
+class App extends React.Component {
+  static contextType = PropertyContext
+  componentDidMount() {
 
-      <main className="App__main">
-        {/* {this.state.hasError && (
-          <p className="red">There was an error! Oh no!</p>
-        )} */}
-        <Switch>
-          <Route exact path={'/'} component={LandingPage} />
-          {/* <Route path={'/login'} component={LoginPage} /> */}
-          <Route path={'/register'} component={RegistrationPage} />
-          <Route path={'/dashboard'} component={Dashboard} />
-          <Route path={'/addProperty'} component={NewPropertyForm} />
-          {/* <Route component={NotFoundPage} /> */}
-        </Switch>
-      </main>
+    this.context.setProperties(properties.properties)
+  }
+  render() {
 
-    </div>
-  );
+    return (
+      <div className="App">
+        <header className="App__header">
+          <NavBar />
+        </header>
+
+        <main className="App__main">
+          {/* {this.state.hasError && (
+            <p className="red">There was an error! Oh no!</p>
+          )} */}
+          <Switch>
+            <Route exact path={'/'} component={LandingPage} />
+            {/* <Route path={'/login'} component={LoginPage} /> */}
+            <Route path={'/register'} component={RegistrationPage} />
+            <Route path={'/dashboard'} component={Dashboard} />
+            <Route path={'/addProperty'} component={NewPropertyForm} />
+            {/* <Route component={NotFoundPage} /> */}
+          </Switch>
+        </main>
+
+      </div>
+    );
+  }
+
+
 }
 
 export default App;

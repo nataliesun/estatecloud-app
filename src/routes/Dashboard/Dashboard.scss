@@ -1,0 +1,12 @@
+@import '../../components/variables.scss';
+
+.Dashboard {
+  padding: 20px;
+
+  button {
+    @include highlighted-button($button-green);
+    font-size: 16px;
+    border: none;
+    margin: 20px;
+  }
+}

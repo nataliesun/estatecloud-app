@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropertyList from '../../components/PropertyList/PropertyList';
+import UserStats from '../../components/UserStats/UserStats';
+
+import './Dashboard.scss';
 
 class Dashboard extends Component {
   addProperty = () => {
@@ -8,9 +11,10 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className="Dashbaord" style={{ "textAlign": "center" }}>
+      <div className="Dashboard" style={{ "textAlign": "center" }}>
         <h2>Dashboard</h2>
         <button onClick={this.addProperty}>Add new property</button>
+        <UserStats />
         <PropertyList />
       </div>
     );

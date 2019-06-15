@@ -2,15 +2,11 @@ import React, { Component } from 'react';
 import PropertyListItem from '../../components/PropertyListItem/PropertyListItem'
 import PropertyContext from '../../contexts/PropertyContext';
 
-import properties from '../../components/dummyProperties'
+
+import './PropertyList.scss';
 
 class PropertyList extends Component {
   static contextType = PropertyContext
-
-  componentDidMount() {
-
-    this.context.setProperties(properties.properties)
-  }
 
   renderProperties = () => {
     const { properties } = this.context

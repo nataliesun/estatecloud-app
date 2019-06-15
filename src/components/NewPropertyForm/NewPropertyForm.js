@@ -11,7 +11,10 @@ class NewPropertyForm extends Component {
     date: [new Date(), new Date()],
   }
 
-  onDateChange = date => this.setState({ date })
+  onDateChange = date => {
+    console.log(this.state.date)
+    return this.setState({ date })
+  }
 
   handleSubmit = ev => {
     ev.preventDefault()
@@ -25,7 +28,8 @@ class NewPropertyForm extends Component {
       status: status.value,
       rent_price: rent_price.value,
       initial_price: initial_price.value,
-      mortgage_payment: mortgage_payment.value
+      mortgage_payment: mortgage_payment.value,
+      dates: this.state.date
     }
 
     this.context.addProperty(newProperty)

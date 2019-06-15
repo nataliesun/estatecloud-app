@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TokenService from '../../services/token-service';
 import './NavBar.scss';
 
@@ -34,6 +35,7 @@ class NavBar extends Component {
         <nav className="NavBar">
           <h1>
             <Link to="/">
+              <FontAwesomeIcon className="blue" icon="door-open" />
               EstateCloud
             </Link>
           </h1>
