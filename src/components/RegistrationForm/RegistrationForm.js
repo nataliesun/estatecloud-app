@@ -23,8 +23,6 @@ class RegistrationForm extends Component {
     TokenService.saveLastName(last_name.value)
     TokenService.saveFirstName(first_name.value)
 
-    console.log('hi')
-
     this.props.onRegistrationSuccess()
 
   }

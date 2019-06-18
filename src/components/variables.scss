@@ -1,11 +1,12 @@
 $app-max-width: 960px;
 $medium-space: 20px;
-
+$nav-height: 60px;
 
 $button-highlight: rgb(255, 121, 121);
 $button-purple: #7979ff;
 $button-green: #70dfba;
 $main-text-color: #444;
+
 
 @mixin highlighted-button($color: $button-highlight) {
   background: $color;

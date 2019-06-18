@@ -1,5 +1,6 @@
 export const properties = [
   {
+    id: 1,
     address: "543 Watermelon ave",
     city: "torrance",
     state: "ca",
@@ -10,6 +11,7 @@ export const properties = [
     dates: [new Date(2019, 3, 5), new Date(2019, 6, 30)]
   },
   {
+    id: 2,
     address: "23 meep st",
     city: "torrance",
     state: "ca",
@@ -20,6 +22,7 @@ export const properties = [
     dates: [new Date(2019, 3, 5), new Date(2019, 6, 30)]
   },
   {
+    id: 3,
     address: "64 Blob way",
     city: "Redondo Beach",
     state: "ca",

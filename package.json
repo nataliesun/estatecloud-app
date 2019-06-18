@@ -3,23 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.14",
+    "@fortawesome/free-regular-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@wojtekmaj/react-daterange-picker": "^2.2.0",
     "chart.js": "^2.8.0",
+    "globalize": "^1.4.2",
+    "moment": "^2.24.0",
     "react": "^16.8.6",
+    "react-big-calendar": "^0.21.0",
     "react-chartjs-2": "^2.7.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "@fortawesome/fontawesome-svg-core": "^1.2.14",
-    "@fortawesome/free-regular-svg-icons": "^5.7.2",
-    "@fortawesome/free-solid-svg-icons": "^5.7.1",
-    "@fortawesome/react-fontawesome": "^0.1.4"
+    "react-tackle-box": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "now ./build"
   },
   "eslintConfig": {
     "extends": "react-app"

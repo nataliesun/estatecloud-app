@@ -9,13 +9,15 @@
   justify-content: space-around;
   flex-direction: column;
   box-shadow:  0 4px 8px 0 rgba(172, 172, 172, 0.2), 0 6px 20px 0 rgba(145, 145, 145, 0.19);
+  // padding: 20px; 
 
   .stat-container {
     display: flex;
     flex-direction: row;
-    flex: 3;
+    // flex: 3;
     border: 1px solid rgb(235, 235, 235);
-  
+    padding: 20px;
+    width: 100%;
   }
 
   .other-stats {
@@ -23,20 +25,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    // height: 60px;
+    max-width: 50%;
     width: 50%;
-
+    max-height: 33%;
     &:first-of-type {
       border-right: 1px solid rgb(235, 235, 235);
     }
 
     p {
+      padding-top: 10px;
       color: $main-text-color;
       opacity: .35;
     }
   }
 
   .portfolio_value {
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;

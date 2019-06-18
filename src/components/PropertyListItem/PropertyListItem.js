@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom'
 import './PropertyListItem.scss';
 
 class PropertyListItem extends Component {
@@ -7,20 +7,23 @@ class PropertyListItem extends Component {
 
 
   render() {
-    const { address, status, dates, rent_price, mortgage_payment } = this.props;
+    const { address, status, dates, rent_price, mortgage_payment, id } = this.props;
+    const propertyLink = `/property/${id}`
     return (
       <li className="PropertyListItem">
-        <h2>{capitalizeAddress(address)}</h2>
-        <p>{checkStatus(status, dates)}</p>
-        {
-          !!Number(rent_price)
-          && <p>
-            Rented at: ${rent_price}
-          </p>
-        }
-        <p>Monthly profit: ${calculateProfit(mortgage_payment, rent_price)}</p>
-        <button className="edit-btn">Edit</button>
-        <button className="delete-btn">Delete</button>
+        <Link to={propertyLink}>
+          <h2>{capitalizeAddress(address)}</h2>
+          <p>{checkStatus(status, dates)}</p>
+          {
+            !!Number(rent_price)
+            && <p>
+              Rented at: ${rent_price}
+            </p>
+          }
+          <p>Monthly profit: ${calculateProfit(mortgage_payment, rent_price)}</p>
+          <button className="edit-btn">Edit</button>
+          <button className="delete-btn">Delete</button>
+        </Link>
       </li>
     );
   }

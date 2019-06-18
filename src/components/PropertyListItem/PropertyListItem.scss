@@ -24,4 +24,9 @@
   .delete-btn {
     background: $button-highlight;
   }
+
+  a {
+    text-decoration: none;
+    color: $main-text-color;
+  }
 }

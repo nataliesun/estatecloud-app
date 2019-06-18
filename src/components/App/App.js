@@ -5,6 +5,8 @@ import LandingPage from '../../routes/LandingPage/LandingPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import Dashboard from '../../routes/Dashboard/Dashboard'
 import NewPropertyForm from '../../components/NewPropertyForm/NewPropertyForm'
+import LoginPage from '../../routes/LoginPage/LoginPage'
+import PropertyPage from '../../routes/PropertyPage/PropertyPage'
 
 import properties from '../../components/dummyProperties';
 import PropertyContext from '../../contexts/PropertyContext';
@@ -31,10 +33,11 @@ class App extends React.Component {
           )} */}
           <Switch>
             <Route exact path={'/'} component={LandingPage} />
-            {/* <Route path={'/login'} component={LoginPage} /> */}
+            <Route path={'/login'} component={LoginPage} />
             <Route path={'/register'} component={RegistrationPage} />
             <Route path={'/dashboard'} component={Dashboard} />
             <Route path={'/addProperty'} component={NewPropertyForm} />
+            <Route path={'/property/:property_id'} component={PropertyPage} />
             {/* <Route component={NotFoundPage} /> */}
           </Switch>
         </main>

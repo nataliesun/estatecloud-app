@@ -18,6 +18,8 @@ class UserStats extends Component {
             <Doughnut
               data={createAvailabilityChart(properties)}
               options={{
+                maintainAspectRatio: true,
+                responsive: true,
                 legend: {
                   display: false
                 }
