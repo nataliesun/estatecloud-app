@@ -113,7 +113,6 @@
   left: 50%;
   transform: translateX(-50%);
 
-
   h1 {
     display: inline;
     padding-left: 10px;
@@ -129,13 +128,14 @@
   }
 
   li {
-  float: left;
-  margin-right: 15px;
-  // font-family: 'Barlow Condensed', sans-serif;
-  font-size: 16px;
-  // letter-spacing: 1px;
-  position: relative;
-  cursor: pointer;
+    float: left;
+    margin-right: 15px;
+    // font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    // letter-spacing: 1px;
+    position: relative;
+    cursor: pointer;
+    color: white;
   }
 
   li::after {

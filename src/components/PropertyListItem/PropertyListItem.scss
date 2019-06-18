@@ -17,12 +17,13 @@
   }
 
   .edit-btn {
-    background: $button-purple;
-    margin: 0;
+    @include highlighted-button($button-highlight);
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .delete-btn {
-    background: $button-highlight;
+    @include highlighted-button($button-purple);
   }
 
   a {

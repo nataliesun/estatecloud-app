@@ -78,9 +78,10 @@ class NavBar extends Component {
             </div>
             <ul className="nav-links">
               <li>
-                <NavLink to='/about'>
-                  About
-              </NavLink>
+                <NavLink to="/addProperty">
+                  <FontAwesomeIcon icon="plus" className="blue" /> Property
+
+                </NavLink>
               </li>
               <li>
                 <NavLink to='/dashboard' >

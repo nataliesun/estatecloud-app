@@ -13,7 +13,7 @@ class Dashboard extends Component {
     return (
       <div className="Dashboard" style={{ "textAlign": "center" }}>
         <h2>Dashboard</h2>
-        <button onClick={this.addProperty}>Add new property</button>
+        {/* <button onClick={this.addProperty}>Add new property</button> */}
         <UserStats />
         <PropertyList />
       </div>

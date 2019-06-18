@@ -8,11 +8,13 @@ import * as serviceWorker from './serviceWorker';
 import { PropertyProvider } from './contexts/PropertyContext';
 
 import {
-  faDoorOpen
+  faDoorOpen, faPlusCircle, faPlus
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
   faDoorOpen, // logo
+  faPlusCircle,
+  faPlus
 )
 
 ReactDOM.render(
