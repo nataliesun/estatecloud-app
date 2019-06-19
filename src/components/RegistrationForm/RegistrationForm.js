@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import TokenService from '../../services/token-service'
+// import TokenService from '../../services/token-service'
+import AuthApiService from '../../services/auth-api-service'
 
 import './RegistrationForm.scss'
 
@@ -11,32 +12,40 @@ class RegistrationForm extends Component {
   state = { error: null }
 
   handleSubmit = ev => {
-    ev.preventDefault();
+    ev.preventDefault()
     const { first_name, last_name, email, password } = ev.target
 
     this.setState({ error: null })
-
-    TokenService.saveAuthToken(
-      TokenService.makeBasicAuthToken(email.value, password.value)
-    )
-
-    TokenService.saveLastName(last_name.value)
-    TokenService.saveFirstName(first_name.value)
-
-    this.props.onRegistrationSuccess()
+    AuthApiService.postUser({
+      email: email.value,
+      password: password.value,
+      first_name: first_name.value,
+      nickname: last_name.value,
+    })
+      .then(user => {
+        first_name.value = ''
+        last_name.value = ''
+        email.value = ''
+        password.value = ''
+        this.props.onRegistrationSuccess()
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      })
 
   }
 
 
   render() {
+    const { error } = this.state
     return (
       <form
         className="RegistrationForm"
         onSubmit={this.handleSubmit}
       >
-        {/* <div role="alert">
+        <div role="alert">
           {error && <p className="red">{error}</p>}
-        </div> */}
+        </div>
         <div className="first_name">
           <label htmlFor="first_name">
             First name

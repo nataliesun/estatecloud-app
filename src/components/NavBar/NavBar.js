@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TokenService from '../../services/token-service';
 import './NavBar.scss';
@@ -13,29 +13,38 @@ class NavBar extends Component {
 
   renderLogoutLink() {
     return (
-      <div className="NavBar__logged-in">
-        <Link className="" to="/dashboard">
-          <span id="nav_dash" onClick={e => this.handleNavClick(e)}>
+      <>
+        <li>
+          <NavLink to="/addProperty">
+            <FontAwesomeIcon icon="plus" className="blue" /> Property
+                </NavLink>
+        </li>
+        <li>
+          <NavLink to='/dashboard' >
             Dashboard
-          </span>
-        </Link>
-        <Link onClick={this.handleLogoutClick} to="/">
+              </NavLink>
+        </li>
+        <li onClick={this.handleLogoutClick}>
           Logout
-        </Link>
-      </div>
+        </li>
+      </>
     );
   }
 
   renderLoginLink() {
     return (
-      <div className="NavBar__not-logged-in">
-        <Link to="/login">
-          <span id="nav_login" onClick={e => this.handleNavClick(e)}>
+      <>
+        <li>
+          <NavLink to="/register">
+            Register
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/login' >
             Login
-          </span>
-        </Link>
-        <Link to="/register">Register</Link>
-      </div>
+          </NavLink>
+        </li>
+      </>
     );
   }
 
@@ -77,23 +86,9 @@ class NavBar extends Component {
               <div className="line3"></div>
             </div>
             <ul className="nav-links">
-              <li>
-                <NavLink to="/addProperty">
-                  <FontAwesomeIcon icon="plus" className="blue" /> Property
-
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to='/dashboard' >
-                  Dashboard
-              </NavLink>
-              </li>
-              <li>
-
-                <NavLink to='/'>
-                  Logout
-              </NavLink>
-              </li>
+              {TokenService.hasAuthToken()
+                ? this.renderLogoutLink()
+                : this.renderLoginLink()}
             </ul>
 
           </nav>

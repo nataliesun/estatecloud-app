@@ -7,18 +7,20 @@ import Dashboard from '../../routes/Dashboard/Dashboard'
 import NewPropertyForm from '../../components/NewPropertyForm/NewPropertyForm'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import PropertyPage from '../../routes/PropertyPage/PropertyPage'
+import PrivateRoute from '../Utils/PrivateRoute';
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
 
-import properties from '../../components/dummyProperties';
+// import properties from '../../components/dummyProperties';
 import PropertyContext from '../../contexts/PropertyContext';
 
 import './App.scss';
 
 class App extends React.Component {
   static contextType = PropertyContext
-  componentDidMount() {
+  // componentDidMount() {
 
-    this.context.setProperties(properties.properties)
-  }
+  //   this.context.setProperties(properties.properties)
+  // }
   render() {
 
     return (
@@ -33,9 +35,9 @@ class App extends React.Component {
           )} */}
           <Switch>
             <Route exact path={'/'} component={LandingPage} />
-            <Route path={'/login'} component={LoginPage} />
-            <Route path={'/register'} component={RegistrationPage} />
-            <Route path={'/dashboard'} component={Dashboard} />
+            <PublicOnlyRoute path={'/login'} component={LoginPage} />
+            <PublicOnlyRoute path={'/register'} component={RegistrationPage} />
+            <PrivateRoute path={'/dashboard'} component={Dashboard} />
             <Route path={'/addProperty'} component={NewPropertyForm} />
             <Route path={'/property/:property_id'} component={PropertyPage} />
             {/* <Route component={NotFoundPage} /> */}

@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import PropertyContext from '../../contexts/PropertyContext'
 
 
 import './UserStats.scss';
 
 class UserStats extends Component {
-  static contextType = PropertyContext;
+  static defaultProps = {
+    availability: null,
+    portfolio_value: null
+  }
 
   render() {
-    const { properties } = this.context;
+    const { availability, portfolio_value } = this.props;
 
     return (
       <div className="UserStats">
         <div className="stat-container">
           <div className="other-stats">
             <Doughnut
-              data={createAvailabilityChart(properties)}
+              data={createAvailabilityChart(availability)}
               options={{
                 maintainAspectRatio: false,
                 responsive: true,
@@ -32,7 +34,7 @@ class UserStats extends Component {
           </div>
         </div>
         <div className="portfolio_value">
-          <h3>{properties.length && calculatePortfolioValue(properties)}</h3>
+          <h3>{portfolio_value && portfolio_value.toLocaleString()}</h3>
           <p>Estimated Portfolio Value</p>
         </div>
       </div>
@@ -42,20 +44,10 @@ class UserStats extends Component {
 
 export default UserStats;
 
-function createAvailabilityChart(properties) {
+function createAvailabilityChart(availability) {
   const labels = ["Available", "Occupied", "Rented"]
-  const data = [0, 0, 0]
+  const data = availability
 
-  for (let i = 0; i < properties.length; i++) {
-    if (properties[i].status === "available")
-      data[0] = data[0] + 1
-
-    else if (properties[i].status === "occupied")
-      data[1] = data[1] + 1
-
-    else
-      data[2] = data[2] + 1
-  }
 
   return {
     labels,
@@ -68,14 +60,4 @@ function createAvailabilityChart(properties) {
       }
     ]
   }
-}
-
-function calculatePortfolioValue(properties) {
-  let total = 0;
-
-  for (let i = 0; i < properties.length; i++) {
-    let current = parseInt(properties[i]["initial_price"]);
-    total = total + current;
-  }
-  return total.toLocaleString()
 }

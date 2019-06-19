@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
 import PropertyListItem from '../../components/PropertyListItem/PropertyListItem'
-import PropertyContext from '../../contexts/PropertyContext';
+
+
 
 
 import './PropertyList.scss';
 
 class PropertyList extends Component {
-  static contextType = PropertyContext
+  static defaultProps = {
+    properties: []
+  }
 
   renderProperties = () => {
-    const { properties } = this.context
+    const { properties } = this.props;
+
     return properties.map((property, index) => {
-      return <PropertyListItem key={index}{...property} />
+      return <PropertyListItem key={index} {...property} />
     })
   }
 
   render() {
     return (
       <ul className="PropertyList">
-        {this.context.properties.length && this.renderProperties()}
+        {this.props.properties.length && this.renderProperties()}
       </ul>
     );
   }

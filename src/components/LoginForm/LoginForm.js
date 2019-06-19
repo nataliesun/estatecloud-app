@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TokenService from '../../services/token-service';
-// import AuthApiService from '../../services/auth-api-service'
+import AuthApiService from '../../services/auth-api-service'
 
 import './LoginForm.scss'
 
@@ -11,42 +11,36 @@ class LoginForm extends Component {
 
   state = { error: null };
 
-  handleSubmitBasicAuth = ev => {
+  handleSubmitJwtAuth = ev => {
     ev.preventDefault()
     this.setState({ error: null })
     const { email, password } = ev.target;
 
-    TokenService.saveAuthToken(
-      TokenService.makeBasicAuthToken(email.value, password.value)
-    )
+    AuthApiService.postLogin({
+      email: email.value,
+      password: password.value
+    })
+      .then(res => {
+        email.value = '';
+        password.value = '';
 
-    this.props.onLoginSucess()
-
-    // AuthApiService.postLogin({
-    //   user_name: user_name.value,
-    //   password: password.value
-    // })
-    //   .then(res => {
-    //     user_name.value = '';
-    //     password.value = '';
-
-    //     TokenService.saveAuthToken(res.authToken)
-    //     this.props.onLoginSucess()
-    //   })
-    //   .catch(res => {
-    //     this.setState({ error: res.error })
-    //   })
+        TokenService.saveAuthToken(res.authToken)
+        this.props.onLoginSucess()
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      })
   };
 
   render() {
     const { error } = this.state;
 
     return (
-      <form className="LoginForm" onSubmit={this.handleSubmitBasicAuth}>
+      <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth}>
         <div role="alert">{error && <p className="red">{error}</p>}</div>
-        <div className="user_name">
+        <div className="email">
           <label htmlFor="email">Email</label>
-          <input required name="email" id="email" />
+          <input required name="email" id="email" type="email" />
         </div>
         <div className="password">
           <label htmlFor="password">Password</label>
