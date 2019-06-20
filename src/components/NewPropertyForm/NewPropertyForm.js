@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import DateRangePicker from '@wojtekmaj/react-daterange-picker'
 import PropertyContext from '../../contexts/PropertyContext';
 
 
@@ -9,14 +8,7 @@ import PropertyApiService from '../../services/property-api-service';
 class NewPropertyForm extends Component {
   static contextType = PropertyContext
 
-  state = {
-    date: [new Date(), new Date()],
-  }
 
-  onDateChange = date => {
-    console.log(this.state.date)
-    return this.setState({ date })
-  }
 
   handleSubmit = ev => {
     ev.preventDefault()
@@ -80,10 +72,7 @@ class NewPropertyForm extends Component {
         </div>
 
         <div className="date-range">
-          <DateRangePicker
-            onChange={this.onDateChange}
-            value={this.state.date}
-          />
+
         </div>
 
         <div className="input-section">

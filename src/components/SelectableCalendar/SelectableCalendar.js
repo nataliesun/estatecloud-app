@@ -1,19 +1,17 @@
 import React from 'react'
 import Calendar from "react-big-calendar";
-import Views from "react-big-calendar";
-import events from './events'
-import ExampleControlSlot from './ExampleControlSlot'
+// import Views from "react-big-calendar";
+// import ExampleControlSlot from './ExampleControlSlot'
 import moment from "moment";
+import DateContext from '../../contexts/DateContext';
 
 const propTypes = {}
-const localizer = Calendar.momentLocalizer(moment);
+
 
 class SelectableCalendar extends React.Component {
-  constructor(...args) {
-    super(...args)
+  static contextType = DateContext
 
-    this.state = { events }
-  }
+
 
   handleSelect = ({ start, end }) => {
     const title = window.prompt('New Event name')
@@ -31,25 +29,21 @@ class SelectableCalendar extends React.Component {
   }
 
   render() {
+    const calendarClasses = this.props.receded ? 'recede SelectableCalendar' : 'SelectableCalendar';
+    const localizer = Calendar.momentLocalizer(moment);
     return (
-      <>
-        <ExampleControlSlot.Entry waitForOutlet>
-          <strong>
-            Click an event to see more info, or drag the mouse over the calendar
-            to select a date/time range.
-          </strong>
-        </ExampleControlSlot.Entry>
-        <Calendar
-          selectable
+      <div className={calendarClasses} style={{ "height": "70vh" }}>
+        {this.context.dates.length && <Calendar
+          // selectable
           localizer={localizer}
-          events={this.state.events}
-          defaultView={Views.WEEK}
+          events={this.context.dates}
+          // defaultView={Views.WEEK}
           scrollToTime={new Date(1970, 1, 1, 6)}
           defaultDate={new Date(Date.now())}
           onSelectEvent={event => alert(event.title)}
-          onSelectSlot={this.handleSelect}
-        />
-      </>
+        // onSelectSlot={this.handleSelect}
+        />}
+      </div>
     )
   }
 }

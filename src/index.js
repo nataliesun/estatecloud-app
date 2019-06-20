@@ -6,23 +6,27 @@ import './index.css';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 import { PropertyProvider } from './contexts/PropertyContext';
+import { DateProvider } from './contexts/DateContext';
 
 import {
-  faDoorOpen, faPlusCircle, faPlus
+  faDoorOpen, faPlusCircle, faPlus, faTimes
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
   faDoorOpen, // logo
   faPlusCircle,
-  faPlus
+  faPlus,
+  faTimes
 )
 
 ReactDOM.render(
-  <PropertyProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </PropertyProvider>
+  <BrowserRouter>
+    <PropertyProvider>
+      <DateProvider>
+        <App />
+      </DateProvider>
+    </PropertyProvider>
+  </BrowserRouter>
   , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

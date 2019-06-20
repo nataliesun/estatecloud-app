@@ -9,18 +9,19 @@ import LoginPage from '../../routes/LoginPage/LoginPage'
 import PropertyPage from '../../routes/PropertyPage/PropertyPage'
 import PrivateRoute from '../Utils/PrivateRoute';
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
+import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 
-// import properties from '../../components/dummyProperties';
-import PropertyContext from '../../contexts/PropertyContext';
 
 import './App.scss';
 
 class App extends React.Component {
-  static contextType = PropertyContext
-  // componentDidMount() {
+  state = { hasError: false };
 
-  //   this.context.setProperties(properties.properties)
-  // }
+  static getDerivedStateFromError(error) {
+    console.error(error);
+    return { hasError: true };
+  }
+
   render() {
 
     return (
@@ -30,9 +31,9 @@ class App extends React.Component {
         </header>
 
         <main className="App__main">
-          {/* {this.state.hasError && (
+          {this.state.hasError && (
             <p className="red">There was an error! Oh no!</p>
-          )} */}
+          )}
           <Switch>
             <Route exact path={'/'} component={LandingPage} />
             <PublicOnlyRoute path={'/login'} component={LoginPage} />
@@ -40,7 +41,7 @@ class App extends React.Component {
             <PrivateRoute path={'/dashboard'} component={Dashboard} />
             <Route path={'/addProperty'} component={NewPropertyForm} />
             <Route path={'/property/:property_id'} component={PropertyPage} />
-            {/* <Route component={NotFoundPage} /> */}
+            <Route component={NotFoundPage} />
           </Switch>
         </main>
 
