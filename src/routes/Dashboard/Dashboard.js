@@ -10,6 +10,7 @@ import './Dashboard.scss';
 class Dashboard extends Component {
   static contextType = PropertyContext
 
+
   addProperty = () => {
     this.props.history.push('/addProperty')
   }

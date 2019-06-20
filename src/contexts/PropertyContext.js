@@ -36,12 +36,15 @@ export class PropertyProvider extends Component {
     this.setState({ propertyData })
   }
 
-  addProperty = property => {
-    this.setProperties([
-      ...this.state.properties,
-      property
-    ])
-  }
+  // addProperty = property => {
+  //   this.setState({
+  //     ...this.state.propertyData,
+  //     properties: [
+  //       ...this.state.propertyData.properties,
+  //       property
+  //     ]
+  //   })
+  // }
 
   render() {
     const value = {

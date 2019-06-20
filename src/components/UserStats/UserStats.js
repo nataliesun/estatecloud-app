@@ -6,8 +6,8 @@ import './UserStats.scss';
 
 class UserStats extends Component {
   static defaultProps = {
-    availability: null,
-    portfolio_value: null
+    availability: [1, 0, 0],
+    portfolio_value: 0
   }
 
   render() {

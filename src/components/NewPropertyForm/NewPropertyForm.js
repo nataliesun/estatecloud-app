@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker'
 import PropertyContext from '../../contexts/PropertyContext';
 
+
 import './NewPropertyForm.scss'
+import PropertyApiService from '../../services/property-api-service';
 
 class NewPropertyForm extends Component {
   static contextType = PropertyContext
@@ -29,12 +31,14 @@ class NewPropertyForm extends Component {
       rent_price: rent_price.value,
       initial_price: initial_price.value,
       mortgage_payment: mortgage_payment.value,
-      dates: this.state.date
     }
 
-    this.context.addProperty(newProperty)
+    PropertyApiService.postProperty(newProperty)
+      .then(this.props.history.push('/dashboard'))
+      .catch(this.context.setError)
 
-    this.props.history.push('/dashboard')
+
+    // this.props.history.push('/dashboard')
 
   }
 

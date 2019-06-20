@@ -12,14 +12,14 @@ class PropertyPage extends Component {
 
   render() {
     const { property_id } = this.props.match.params;
-    const { properties } = this.context;
+    const { propertyData } = this.context;
 
-    const property = properties.find(p => p.id === Number(property_id))
+    const property = propertyData.properties.find(p => p.id === Number(property_id))
 
     return (
       <div className="PropertyPage">
         <h2>
-          {properties.length && property.address}
+          {propertyData.properties.length && property.address}
 
         </h2>
         <Schedule />

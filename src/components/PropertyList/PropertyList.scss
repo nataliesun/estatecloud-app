@@ -1,3 +1,17 @@
-.ProperyList {
-  
+@import '../variables.scss';
+
+.PropertyList {
+  li {
+    list-style-type: none;
+  }
+  .link-button {
+    @include highlighted-button;
+    a {
+      font-size: 24px;
+      color: white;
+    }
+    padding: 10px;
+
+
+  }
 }
