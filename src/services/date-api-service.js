@@ -23,8 +23,8 @@ const DateApiService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
-  deleteDate(property_id) {
-    return fetch(`${config.API_ENDPOINT}/properties/${property_id}`, {
+  deleteReservation(reservation_id) {
+    return fetch(`${config.API_ENDPOINT}/reservations/${reservation_id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',

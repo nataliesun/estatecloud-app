@@ -4,7 +4,7 @@ import DateApiService from '../../services/date-api-service';
 
 import './Schedule.scss'
 import SelectableCalendar from "../SelectableCalendar/SelectableCalendar";
-import DateModal from "../DateModal/DateModal";
+import DateModal from "../Modals/DateModal/DateModal";
 import DateContext from "../../contexts/DateContext";
 
 

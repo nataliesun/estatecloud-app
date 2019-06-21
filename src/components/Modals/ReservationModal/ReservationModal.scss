@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@import '../../variables.scss';
 
  .recede {
 
@@ -16,7 +16,7 @@
   pointer-events: none;
 }
 
-.DateModal {
+.ReservationModal {
   background-color: white;
   box-shadow:   0 4px 8px 0 rgba(172, 172, 172, 0.2), 0 6px 20px 0 rgba(145, 145, 145, 0.19);
   height: 30vh;
@@ -33,6 +33,7 @@
     float: right;
     // margin: -10px -6px;
     font-size: 22px;
+    cursor: pointer;
   }
 
   h3 {

@@ -1,9 +1,9 @@
 import React from 'react'
 import Calendar from "react-big-calendar";
-// import Views from "react-big-calendar";
-// import ExampleControlSlot from './ExampleControlSlot'
+import Views from "react-big-calendar";
 import moment from "moment";
 import DateContext from '../../contexts/DateContext';
+import ReservationModal from '../Modals/ReservationModal/ReservationModal';
 
 const propTypes = {}
 
@@ -11,39 +11,55 @@ const propTypes = {}
 class SelectableCalendar extends React.Component {
   static contextType = DateContext
 
+  state = {
+    modalOpen: false,
+    reservation: {
+      title: '',
+      id: null
+    }
+  }
 
+  openModal = (event) => {
+    // console.log(event.id)
+    this.setState({
+      modalOpen: !this.state.modalOpen,
+      reservation: {
+        title: event.title,
+        id: event.id
+      }
+    })
+  }
 
-  handleSelect = ({ start, end }) => {
-    const title = window.prompt('New Event name')
-    if (title)
-      this.setState({
-        events: [
-          ...this.state.events,
-          {
-            start,
-            end,
-            title,
-          },
-        ],
-      })
+  handleClose = () => {
+    this.setState({
+      modalOpen: !this.state.modalOpen,
+      reservation: {
+        title: '',
+        id: null
+      }
+    })
   }
 
   render() {
-    const calendarClasses = this.props.receded ? 'recede SelectableCalendar' : 'SelectableCalendar';
+    const { modalOpen, reservation } = this.state;
+
+    const calendarClasses = this.props.receded || modalOpen ? 'recede SelectableCalendar' : 'SelectableCalendar';
     const localizer = Calendar.momentLocalizer(moment);
     return (
-      <div className={calendarClasses} style={{ "height": "70vh" }}>
-        {this.context.dates.length && <Calendar
-          // selectable
-          localizer={localizer}
-          events={this.context.dates}
-          // defaultView={Views.WEEK}
-          scrollToTime={new Date(1970, 1, 1, 6)}
-          defaultDate={new Date(Date.now())}
-          onSelectEvent={event => alert(event.title)}
-        // onSelectSlot={this.handleSelect}
-        />}
-      </div>
+      <>
+        <div className={calendarClasses} style={{ "height": "70vh" }}>
+          {this.context.dates.length && <Calendar
+            // selectable
+            localizer={localizer}
+            events={this.context.dates}
+            defaultView={Views.WEEK}
+            scrollToTime={new Date(1970, 1, 1, 6)}
+            defaultDate={new Date(Date.now())}
+            onSelectEvent={ev => this.openModal(ev)}
+          />}
+        </div>
+        <ReservationModal open={modalOpen} reservation={reservation} handleClose={this.handleClose} />
+      </>
     )
   }
 }

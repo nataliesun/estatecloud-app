@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './DateModal.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DateRangePicker from '@wojtekmaj/react-daterange-picker'
-import DateContext from '../../contexts/DateContext';
-import DateApiService from '../../services/date-api-service';
+import DateContext from '../../../contexts/DateContext';
+import DateApiService from '../../../services/date-api-service';
 
 class DateModal extends Component {
   static contextType = DateContext
