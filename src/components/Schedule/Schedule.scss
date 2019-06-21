@@ -9,5 +9,6 @@
   #Schedule__btn {
     @include highlighted-button;
     margin-bottom: 20px;
+    cursor: pointer;
   }
 }

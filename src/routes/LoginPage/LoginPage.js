@@ -23,6 +23,7 @@ class LoginPage extends Component {
         <h2>Login</h2>
         <LoginForm
           onLoginSucess={this.handleLoginSuccess}
+          {...this.props}
         />
       </div>
     );

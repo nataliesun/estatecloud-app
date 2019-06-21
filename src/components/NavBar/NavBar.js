@@ -3,13 +3,21 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TokenService from '../../services/token-service';
 import './NavBar.scss';
+import PropertyContext from '../../contexts/PropertyContext';
 
 class NavBar extends Component {
+  static contextType = PropertyContext
+
+
+  componentDidMount() {
+    TokenService.hasAuthToken() ? this.context.handleLoginSuccess() : this.context.handleLogout()
+  }
+
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
+    this.context.handleLogout()
+    window.location.reload();
   };
-
-
 
   renderLogoutLink() {
     return (
@@ -70,6 +78,7 @@ class NavBar extends Component {
   }
 
   render() {
+    const links = this.context.loggedIn ? this.renderLogoutLink() : this.renderLoginLink();
     return (
       <>
         <div className="NavBar__outer">
@@ -86,9 +95,7 @@ class NavBar extends Component {
               <div className="line3"></div>
             </div>
             <ul className="nav-links">
-              {TokenService.hasAuthToken()
-                ? this.renderLogoutLink()
-                : this.renderLoginLink()}
+              {links}
             </ul>
 
           </nav>

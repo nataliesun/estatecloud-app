@@ -8,13 +8,15 @@ const PropertyContext = React.createContext({
   clearError: () => { },
   addProperty: () => { },
   clearProperty: () => { },
-
+  handleLoginSuccess: () => { },
+  handleLogout: () => { }
 })
 
 export default PropertyContext
 
 export class PropertyProvider extends Component {
   state = {
+    loggedIn: false,
     propertyData: {},
     error: null,
   };
@@ -36,19 +38,23 @@ export class PropertyProvider extends Component {
     this.setState({ propertyData })
   }
 
-  // addProperty = property => {
-  //   this.setState({
-  //     ...this.state.propertyData,
-  //     properties: [
-  //       ...this.state.propertyData.properties,
-  //       property
-  //     ]
-  //   })
-  // }
+  handleLoginSuccess = () => {
+    this.setState({
+      loggedIn: true
+    })
+
+  }
+
+  handleLogout = () => {
+    console.log('logged out')
+    this.setState({
+      loggedIn: false
+    })
+  }
 
   render() {
     const value = {
-
+      loggedIn: this.state.loggedIn,
       propertyData: this.state.propertyData,
       error: this.state.error,
       setError: this.setError,
@@ -56,6 +62,8 @@ export class PropertyProvider extends Component {
       setPropertyData: this.setPropertyData,
       clearProperties: this.clearProperties,
       addProperty: this.addProperty,
+      handleLoginSuccess: this.handleLoginSuccess,
+      handleLogout: this.handleLogout
     }
     return (
       <PropertyContext.Provider value={value}>

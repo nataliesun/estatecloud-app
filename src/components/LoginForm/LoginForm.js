@@ -3,11 +3,11 @@ import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service'
 
 import './LoginForm.scss'
+import PropertyContext from '../../contexts/PropertyContext';
 
 class LoginForm extends Component {
-  static defaultProps = {
-    onLoginSuccess: () => { }
-  };
+  static contextType = PropertyContext
+
 
   state = { error: null };
 
@@ -25,7 +25,8 @@ class LoginForm extends Component {
         password.value = '';
 
         TokenService.saveAuthToken(res.authToken)
-        this.props.onLoginSucess()
+        window.location.reload();
+        this.context.handleLoginSucces()
       })
       .catch(res => {
         this.setState({ error: res.error })
@@ -36,15 +37,16 @@ class LoginForm extends Component {
     const { error } = this.state;
 
     return (
-      <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth}>
+      <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth} >
         <div role="alert">{error && <p className="red">{error}</p>}</div>
         <div className="email">
           <label htmlFor="email">Email</label>
-          <input required name="email" id="email" type="email" />
+          <input required name="email" id="email" type="email" autoComplete="new-password" />
         </div>
         <div className="password">
           <label htmlFor="password">Password</label>
           <input
+            autoComplete="new-password"
             required
             name="password"
             type="password"
