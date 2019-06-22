@@ -46,7 +46,6 @@ export class PropertyProvider extends Component {
   }
 
   handleLogout = () => {
-    console.log('logged out')
     this.setState({
       loggedIn: false
     })

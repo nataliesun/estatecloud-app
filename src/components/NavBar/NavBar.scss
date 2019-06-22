@@ -88,14 +88,16 @@
 
 
 .NavBar__outer {
-  background: $button-purple;
+  background: rgb(25,46,103);
+  background: linear-gradient(90deg, rgba(25,46,103,1) 0%, rgba(24,31,79,1) 50%, rgba(26,30,76,1) 100%);
+
   width: 100vw;
   z-index: 1000;
   position: fixed;
   left: 0;
   top: 0;
   height: $nav-height;
-  box-shadow:   0 4px 8px 0 rgba(172, 172, 172, 0.2), 0 6px 20px 0 rgba(145, 145, 145, 0.19);
+  // box-shadow:   0 4px 8px 0 rgba(172, 172, 172, 0.2), 0 6px 20px 0 rgba(145, 145, 145, 0.19);
 }
 
 .NavBar {
@@ -176,7 +178,7 @@
     right: 0px;
     height: 100vh;
     top: 0;
-    background-color: #FDE6E2;
+    background: #181f4f;
     flex-direction: column;
     width: 50%;
     transform: translateX(100%);

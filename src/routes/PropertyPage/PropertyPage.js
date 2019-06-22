@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import PropertyContext from '../../contexts/PropertyContext'
 import Schedule from '../../components/Schedule/Schedule';
 
@@ -21,10 +22,16 @@ class PropertyPage extends Component {
 
     return (
       <div className="PropertyPage">
-        <h2>
-          {this.context.propertyData.properties && this.renderAddress(property_id)}
-
-        </h2>
+        <ul className="breadcrumb">
+          <li>
+            <Link to="/dashboard">
+              Dashboard
+            </Link>
+          </li>
+          <li>
+            {this.context.propertyData.properties && this.renderAddress(property_id)}
+          </li>
+        </ul>
         <Schedule {...this.props} />
       </div>
     );

@@ -2,6 +2,15 @@ import config from '../config';
 import TokenService from './token-service';
 
 const DateApiService = {
+  getReservationsForUser() {
+    return fetch(`${config.API_ENDPOINT}/reservations/user`, {
+      headers: {
+        authorization: `bearer ${TokenService.getAuthToken()}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
   getDatesForProperty(propertyId) {
     return fetch(`${config.API_ENDPOINT}/reservations/${propertyId}`, {
       headers: {

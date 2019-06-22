@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import DateApiService from '../../services/date-api-service';
+
 
 
 import './UserStats.scss';
+import DateContext from '../../contexts/DateContext';
 
 class UserStats extends Component {
+  static contextType = DateContext
+
   static defaultProps = {
     availability: [1, 0, 0],
     portfolio_value: 0
   }
+
+  componentDidMount() {
+    DateApiService.getReservationsForUser()
+      .then(count => this.context.setTotalReservations(count.count))
+  }
+
 
   render() {
     const { availability, portfolio_value } = this.props;
@@ -30,7 +41,8 @@ class UserStats extends Component {
             <p>Availability</p>
           </div>
           <div className="other-stats">
-            Stat 2
+            <h3>{this.context.totalReservations}</h3>
+            <p>Reservations</p>
           </div>
         </div>
         <div className="portfolio_value">
