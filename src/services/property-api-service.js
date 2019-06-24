@@ -11,8 +11,8 @@ const PropertyApiService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
-  getProperty(thingId) {
-    return fetch(`${config.API_ENDPOINT}/things/${thingId}`, {
+  getProperty(id) {
+    return fetch(`${config.API_ENDPOINT}/properties/${id}`, {
       headers: {
         authorization: `bearer ${TokenService.getAuthToken()}`
       }
@@ -20,15 +20,18 @@ const PropertyApiService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
-  // getPropertyReviews(thingId) {
-  //   return fetch(`${config.API_ENDPOINT}/things/${thingId}/reviews`, {
-  //     headers: {
-  //       authorization: `bearer ${TokenService.getAuthToken()}`
-  //     }
-  //   }).then(res =>
-  //     !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
-  //   );
-  // },
+  editProperty(id, newProperty) {
+    return fetch(`${config.API_ENDPOINT}/properties/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify(newProperty)
+    }).then(res =>
+      !res.ok ? res.then(e => Promise.reject(e)) : res
+    );
+  },
   postProperty(property) {
     return fetch(`${config.API_ENDPOINT}/properties`, {
       method: 'POST',
