@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import './PropertyListItem.scss';
 import PropertyApiService from '../../services/property-api-service';
 import PropertyContext from '../../contexts/PropertyContext';
@@ -10,8 +10,12 @@ class PropertyListItem extends Component {
   handlePropertyDelete = (propertyId) => {
 
     PropertyApiService.deleteProperty(propertyId)
-      .then(res => console.log(res))
+      .then(res => this.context.removeProperty(propertyId))
       .catch(this.context.setError)
+  }
+
+  handlePropertyEdit = (propertyId) => {
+    this.props.history.push(`/editProperty/${propertyId}`)
   }
 
   render() {
@@ -31,7 +35,7 @@ class PropertyListItem extends Component {
           </p>
         }
         <p>Monthly profit: ${profit}</p>
-        <button className="edit-btn">Edit</button>
+        <button className="edit-btn" onClick={() => this.handlePropertyEdit(id)}>Edit</button>
         <button
           className="delete-btn"
           onClick={() => this.handlePropertyDelete(id)}
@@ -43,4 +47,4 @@ class PropertyListItem extends Component {
   }
 }
 
-export default PropertyListItem;
+export default withRouter(PropertyListItem);

@@ -13,6 +13,7 @@ import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 
 
 import './App.scss';
+import EditPropertyPage from '../../routes/EditPropertyPage/EditPropertyPage';
 
 class App extends React.Component {
   state = { hasError: false };
@@ -41,6 +42,7 @@ class App extends React.Component {
             <PrivateRoute path={'/dashboard'} component={Dashboard} />
             <Route path={'/addProperty'} component={NewPropertyForm} />
             <Route path={'/property/:property_id'} component={PropertyPage} />
+            <Route path={'/editProperty/:property_id'} component={EditPropertyPage} />
             <Route component={NotFoundPage} />
           </Switch>
         </main>

@@ -7,7 +7,8 @@ const PropertyContext = React.createContext({
   setError: () => { },
   clearError: () => { },
   addProperty: () => { },
-  clearProperty: () => { },
+  removeProperty: () => { },
+  clearProperties: () => { },
   handleLoginSuccess: () => { },
   handleLogout: () => { }
 })
@@ -28,6 +29,26 @@ export class PropertyProvider extends Component {
 
   clearError = () => {
     this.setState({ error: null })
+  }
+
+  addProperty = (property) => {
+    this.setState({
+      propertyData: {
+        properties: [
+          ...this.state.properties,
+          property
+        ]
+      }
+    })
+  }
+
+  removeProperty = (propertyId) => {
+    const newProperties = this.state.propertyData.properties.filter(p => p.id !== propertyId)
+    this.setState({
+      propertyData: {
+        properties: newProperties
+      }
+    })
   }
 
   clearProperties = () => {
@@ -61,6 +82,7 @@ export class PropertyProvider extends Component {
       setPropertyData: this.setPropertyData,
       clearProperties: this.clearProperties,
       addProperty: this.addProperty,
+      removeProperty: this.removeProperty,
       handleLoginSuccess: this.handleLoginSuccess,
       handleLogout: this.handleLogout
     }
