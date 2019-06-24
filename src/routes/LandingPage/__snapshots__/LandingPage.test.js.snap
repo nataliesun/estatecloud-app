@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LandingPage route component renders the UI as expected 1`] = `
+<div
+  className="LandingPage"
+>
+  <img
+    alt="schedule"
+    className="hero"
+    src="undraw_schedule.svg"
+  />
+  <section>
+    <h3>
+      Get organized
+    </h3>
+    <img
+      alt="collecting"
+      src="undraw_collecting.svg"
+    />
+    <p>
+      EstateCloud helps you visualize all your properties in one place, so you never miss an important date.
+    </p>
+  </section>
+  <section>
+    <h3>
+      Information at a glance
+    </h3>
+    <img
+      alt="note list"
+      src="undraw_note_list.svg"
+    />
+    <p>
+      EstateCloud provides you with a quick and simple interface that helps you keep track of what's happening at your properties.
+    </p>
+  </section>
+  <section>
+    <h3>
+      Connect with your friends
+    </h3>
+    <img
+      alt="calendar"
+      src="undraw_calendar.svg"
+    />
+    <p>
+      Interactive calendars to help you keep track of who's staying when and where.
+    </p>
+  </section>
+  <section>
+    <h3>
+      Start managing today
+    </h3>
+    <a
+      href="/register"
+      onClick={[Function]}
+    >
+      Get started - it's free!
+    </a>
+  </section>
+</div>
+`;

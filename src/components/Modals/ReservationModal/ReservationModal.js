@@ -8,6 +8,14 @@ import DateContext from '../../../contexts/DateContext';
 class ReservationModal extends Component {
   static contextType = DateContext
 
+  static defaultProps = {
+    open: '',
+    handleClose: () => { },
+    reservation: {
+      title: '',
+
+    }
+  }
 
   handleDeleteReservation = () => {
     const { id } = this.props.reservation

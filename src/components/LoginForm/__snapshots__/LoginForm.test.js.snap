@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm route component renders the UI as expected 1`] = `
+<form
+  className="LoginForm"
+  onSubmit={[Function]}
+>
+  <div
+    role="alert"
+  />
+  <div
+    className="email"
+  >
+    <label
+      htmlFor="email"
+    >
+      Email
+    </label>
+    <input
+      autoComplete="new-password"
+      id="email"
+      name="email"
+      required={true}
+      type="email"
+    />
+  </div>
+  <div
+    className="password"
+  >
+    <label
+      htmlFor="password"
+    >
+      Password
+    </label>
+    <input
+      autoComplete="new-password"
+      id="password"
+      name="password"
+      required={true}
+      type="password"
+    />
+  </div>
+  <button
+    type="submit"
+  >
+    Login
+  </button>
+</form>
+`;

@@ -5,11 +5,14 @@ import Schedule from '../../components/Schedule/Schedule';
 
 import './PropertyPage.scss'
 
-
-
-
 class PropertyPage extends Component {
   static contextType = PropertyContext;
+
+  static defaultProps = {
+    match: {
+      params: {}
+    }
+  }
 
   renderAddress = (id) => {
     return this.context.propertyData.properties.find(p => p.id === Number(id)).address
