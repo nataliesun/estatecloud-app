@@ -17,16 +17,13 @@ class EditPropertyForm extends Component {
   }
 
   componentDidMount() {
-    // console.log(this.context.propertyData.properties)
-
-    // const currentProp = this.context.propertyData.properties.find(p => p.id = this.props.match.params.property_id)
 
     PropertyApiService.getProperty(this.props.match.params.property_id)
       .then(res => this.setState({
         currentProp: res
       }))
 
-    // console.log(currentProp)
+
   }
 
   handleAddressChange = (value) => {
@@ -48,16 +45,25 @@ class EditPropertyForm extends Component {
       .catch(this.context.setError)
   }
 
+  handleStatusChange = (ev) => {
+    this.setState({
+      currentProp: {
+        ...this.state.currentProp,
+        status: ev.target.value
+      }
+    })
+  }
+
   render() {
     return (
       <form className="EditPropertyForm" onSubmit={this.handleSubmit}>
         <div className="input-section">
           <label htmlFor="address">Address: </label>
-          <input type="text" name="address" value={this.state.address} onChange={e => this.handleAddressChange(e.target.value)} />
+          <input type="text" name="address" value={this.state.currentProp.address} onChange={e => this.handleAddressChange(e.target.value)} />
           <label htmlFor="city">City: </label>
-          <input type="text" name="city" value={this.state.city} />
+          <input type="text" name="city" value={this.state.currentProp.city} onChange={e => this.handleCityChange(e.target.value)} />
           <label htmlFor="state">State: </label>
-          <input type="text" name="state" value={this.state.state} />
+          <input type="text" name="state" value={this.state.currentProp.state} onChange={e => this.handleStateChange(e.target.value)} />
         </div>
 
 
@@ -68,7 +74,8 @@ class EditPropertyForm extends Component {
             value="available"
             id="available"
             name="status"
-
+            checked={this.state.currentProp.status === 'available'}
+            onChange={this.handleStatusChange}
           />
           <label htmlFor="rented">Rented</label>
           <input
@@ -76,6 +83,8 @@ class EditPropertyForm extends Component {
             value="rented"
             id="rented"
             name="status"
+            checked={this.state.currentProp.status === 'rented'}
+            onChange={this.handleStatusChange}
           />
           <label htmlFor="occupied">Occupied</label>
           <input
@@ -83,6 +92,8 @@ class EditPropertyForm extends Component {
             value="occupied"
             id="occupied"
             name="status"
+            checked={this.state.currentProp.status === 'occupied'}
+            onChange={this.handleStatusChange}
           />
         </div>
 

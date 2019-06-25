@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewPropertyForm Component renders the UI as expected 1`] = `
+<form
+  className="NewPropertyForm"
+  onSubmit={[Function]}
+>
+  <div
+    className="input-section"
+  >
+    <label
+      htmlFor="address"
+    >
+      Address: 
+    </label>
+    <input
+      name="address"
+      placeholder="321 Awesome Ave."
+      required={true}
+      type="text"
+    />
+    <label
+      htmlFor="city"
+    >
+      City: 
+    </label>
+    <input
+      name="city"
+      placeholder="San Diego"
+      required={true}
+      type="text"
+    />
+    <label
+      htmlFor="state"
+    >
+      State: 
+    </label>
+    <input
+      name="state"
+      placeholder="CA"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="input-section"
+  >
+    <label
+      htmlFor="available"
+    >
+      Available
+    </label>
+    <input
+      id="available"
+      name="status"
+      type="radio"
+      value="available"
+    />
+    <label
+      htmlFor="rented"
+    >
+      Rented
+    </label>
+    <input
+      id="rented"
+      name="status"
+      type="radio"
+      value="rented"
+    />
+    <label
+      htmlFor="occupied"
+    >
+      Occupied
+    </label>
+    <input
+      id="occupied"
+      name="status"
+      type="radio"
+      value="occupied"
+    />
+  </div>
+  <div
+    className="date-range"
+  />
+  <div
+    className="input-section"
+  >
+    <label
+      htmlFor="rent-price"
+    >
+      Rent price:
+    </label>
+    <input
+      name="rent_price"
+      placeholder="2000"
+      type="number"
+    />
+    <label
+      htmlFor="intial-price"
+    >
+      Initial price:
+    </label>
+    <input
+      name="initial_price"
+      placeholder="1000000"
+      type="number"
+    />
+    <label
+      htmlFor="mortgage-payment"
+    >
+      Mortgage payment: 
+    </label>
+    <input
+      name="mortgage_payment"
+      placeholder="1500"
+      type="number"
+    />
+  </div>
+  <div
+    className="submit-buttons"
+  >
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+    <button
+      type="reset"
+    >
+      Reset
+    </button>
+  </div>
+</form>
+`;

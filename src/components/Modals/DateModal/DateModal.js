@@ -47,7 +47,7 @@ class DateModal extends Component {
         </span>
         <form onSubmit={this.handleSubmitDates}>
           <h3>New Reservation</h3>
-          <input name="name" type="text" id="name" placeholder="Reservation title" />
+          <input name="name" type="text" id="name" placeholder="Reservation title" required />
           <DateRangePicker
             onChange={this.onDateChange}
             value={this.state.date}

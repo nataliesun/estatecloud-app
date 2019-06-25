@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserStats Component should render correctly with no props 1`] = `
+<div
+  className="UserStats"
+>
+  <div
+    className="stat-container"
+  >
+    <div
+      className="other-stats"
+    >
+      <Doughnut
+        data={
+          Object {
+            "datasets": Array [
+              Object {
+                "backgroundColor": Array [
+                  "rgb(255, 121, 121)",
+                  "#7979ff",
+                  "#70dfba",
+                ],
+                "data": Array [
+                  1,
+                  0,
+                  0,
+                ],
+              },
+            ],
+            "labels": Array [
+              "Available",
+              "Occupied",
+              "Rented",
+            ],
+          }
+        }
+        options={
+          Object {
+            "legend": Object {
+              "display": false,
+            },
+            "maintainAspectRatio": false,
+            "responsive": true,
+          }
+        }
+      />
+      <p>
+        Availability
+      </p>
+    </div>
+    <div
+      className="other-stats"
+    >
+      <h3 />
+      <p>
+        Reservations
+      </p>
+    </div>
+  </div>
+  <div
+    className="portfolio_value"
+  >
+    <h3>
+      0
+    </h3>
+    <p>
+      Estimated Portfolio Value
+    </p>
+  </div>
+</div>
+`;

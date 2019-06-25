@@ -11,6 +11,12 @@ import DateContext from "../../contexts/DateContext";
 class Schedule extends Component {
   static contextType = DateContext
 
+  static defaultProps = {
+    match: {
+      params: {}
+    }
+  }
+
   state = {
     modalClosed: true,
     recedeCalendar: false

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropertyListItem Component renders the UI as expected 1`] = `
+<li
+  className="PropertyListItem"
+>
+  <a
+    href="/property/undefined"
+    onClick={[Function]}
+  >
+    <h2 />
+  </a>
+  <p>
+    Available until: tbd
+  </p>
+  <p>
+    Monthly profit: $
+  </p>
+  <button
+    className="edit-btn"
+    onClick={[Function]}
+  >
+    Edit
+  </button>
+  <button
+    className="delete-btn"
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+</li>
+`;

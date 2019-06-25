@@ -5,6 +5,8 @@ import AuthApiService from '../../services/auth-api-service'
 import './LoginForm.scss'
 import PropertyContext from '../../contexts/PropertyContext';
 
+//center align with register styles
+
 class LoginForm extends Component {
   static contextType = PropertyContext
 
