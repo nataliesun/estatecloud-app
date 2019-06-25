@@ -1,6 +1,7 @@
 $app-max-width: 960px;
 $medium-space: 20px;
 $nav-height: 60px;
+$app-padding: 20px;
 
 $button-highlight: rgb(255, 121, 121);
 $button-purple: #7979ff;
@@ -9,7 +10,8 @@ $main-text-color: #444;
 
 
 @mixin highlighted-button($color: $button-highlight) {
-  background: $color;
+  background: rgb(25,46,103);
+  background: linear-gradient(90deg, rgba(25,46,103,1) 0%, rgba(24,31,79,1) 50%, rgba(26,30,76,1) 100%);
   color: white;
   padding: 5px 15px;
   border-radius: 15px;

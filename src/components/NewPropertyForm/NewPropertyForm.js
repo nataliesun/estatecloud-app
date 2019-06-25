@@ -26,11 +26,11 @@ class NewPropertyForm extends Component {
     }
 
     PropertyApiService.postProperty(newProperty)
-      .then(this.props.history.push('/dashboard'))
+      .then(res => this.context.addProperty(res))
       .catch(this.context.setError)
 
 
-    // this.props.history.push('/dashboard')
+    this.props.history.push('/dashboard')
 
   }
 
@@ -47,7 +47,7 @@ class NewPropertyForm extends Component {
         </div>
 
 
-        <div className="input-section">
+        <div className="input-section-row">
           <label htmlFor="available">Available</label>
           <input
             type="radio"

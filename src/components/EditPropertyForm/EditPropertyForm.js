@@ -3,11 +3,21 @@ import { withRouter } from 'react-router-dom'
 import PropertyContext from '../../contexts/PropertyContext';
 import PropertyApiService from '../../services/property-api-service';
 
+import './EditPropertyForm.scss'
+
 class EditPropertyForm extends Component {
   static contextType = PropertyContext
 
   state = {
-    currentProp: {}
+    currentProp: {
+      address: '',
+      city: '',
+      state: '',
+      status: '',
+      rent_price: 0,
+      initial_price: 0,
+      mortgage_payment: 0
+    }
   }
 
   static defaultProps = {
@@ -22,8 +32,6 @@ class EditPropertyForm extends Component {
       .then(res => this.setState({
         currentProp: res
       }))
-
-
   }
 
   handleAddressChange = (value) => {
@@ -31,6 +39,60 @@ class EditPropertyForm extends Component {
       currentProp: {
         ...this.state.currentProp,
         address: value
+      }
+    })
+  }
+
+  handleCityChange = (value) => {
+    this.setState({
+      currentProp: {
+        ...this.state.currentProp,
+        city: value
+      }
+    })
+  }
+
+  handleStateChange = (value) => {
+    this.setState({
+      currentProp: {
+        ...this.state.currentProp,
+        state: value
+      }
+    })
+  }
+
+  handleRentChange = (value) => {
+    this.setState({
+      currentProp: {
+        ...this.state.currentProp,
+        rent_price: value
+      }
+    })
+  }
+
+  handleStatusChange = (ev) => {
+    this.setState({
+      currentProp: {
+        ...this.state.currentProp,
+        status: ev.target.value
+      }
+    })
+  }
+
+  handleInitialChange = (value) => {
+    this.setState({
+      currentProp: {
+        ...this.state.currentProp,
+        initial_price: value
+      }
+    })
+  }
+
+  handleMortgageChange = (value) => {
+    this.setState({
+      currentProp: {
+        ...this.state.currentProp,
+        mortgage_payment: value
       }
     })
   }
@@ -45,14 +107,6 @@ class EditPropertyForm extends Component {
       .catch(this.context.setError)
   }
 
-  handleStatusChange = (ev) => {
-    this.setState({
-      currentProp: {
-        ...this.state.currentProp,
-        status: ev.target.value
-      }
-    })
-  }
 
   render() {
     return (
@@ -67,7 +121,7 @@ class EditPropertyForm extends Component {
         </div>
 
 
-        <div className="input-section">
+        <div className="input-section-row">
           <label htmlFor="available">Available</label>
           <input
             type="radio"
@@ -103,21 +157,21 @@ class EditPropertyForm extends Component {
 
         <div className="input-section">
           <label htmlFor="rent-price">Rent price:</label>
-          <input type="number" name="rent_price" value={this.state.rent_price} />
+          <input type="number" name="rent_price" value={this.state.currentProp.rent_price} onChange={e => this.handleRentChange(e.target.value)} />
 
 
           <label htmlFor="intial-price">Initial price:</label>
-          <input type="number" name="initial_price" />
+          <input type="number" name="initial_price" value={this.state.currentProp.initial_price} onChange={e => this.handleInitalChange(e.target.value)} />
 
 
           <label htmlFor="mortgage-payment">Mortgage payment: </label>
-          <input type="number" name="mortgage_payment" placeholder="1500" />
+          <input type="number" name="mortgage_payment" placeholder="1500" value={this.state.currentProp.mortgage_payment} onChange={e => this.handleMortgageChange(e.target.value)} />
         </div>
 
         <div className="submit-buttons">
 
           <button type="submit">Submit</button>
-          <button type="reset">Reset</button>
+          <button type="reset">Cancel</button>
         </div>
       </form >
     );

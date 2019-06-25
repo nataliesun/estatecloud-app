@@ -29,11 +29,10 @@ class PropertyList extends Component {
     return (
       <ul className="PropertyList">
         {this.props.properties.length
-          ? this.renderProperties()
-          : <li className="link-button">
-            <Link to='/addProperty'><FontAwesomeIcon icon='plus-circle' /></Link>
-          </li>
-        }
+          && this.renderProperties()}
+        <li className="link-button">
+          <Link to='/addProperty'><FontAwesomeIcon icon='plus-circle' /></Link>
+        </li>
       </ul>
     );
   }

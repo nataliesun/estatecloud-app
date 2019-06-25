@@ -35,7 +35,7 @@ export class PropertyProvider extends Component {
     this.setState({
       propertyData: {
         properties: [
-          ...this.state.properties,
+          ...this.state.propertyData.properties,
           property
         ]
       }

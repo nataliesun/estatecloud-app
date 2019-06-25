@@ -38,7 +38,7 @@ class Schedule extends Component {
   render() {
     return (
       <div className="Schedule">
-        <button id="Schedule__btn" onClick={this.handleBtnClick}>Add Dates</button>
+        <button id="Schedule__btn" onClick={this.handleBtnClick}>Add Reservation</button>
         <DateModal hidden={this.state.modalClosed} handleClose={this.handleBtnClick} {...this.props} />
         <SelectableCalendar receded={this.state.recedeCalendar} />
       </div>

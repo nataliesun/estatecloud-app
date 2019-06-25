@@ -1,13 +1,7 @@
 @import '../variables.scss';
 
-.NewPropertyForm {
+.EditPropertyForm {
   padding: 0 20px;
-
-  input {
-    // border: 1px grey solid;
-  }
-
-  
 
   .input-section{
     display: flex;
@@ -42,9 +36,5 @@
     @include highlighted-button;
     font-size: 16px;
     border: none;
-
-    &:first-of-type {
-      margin-right: 10px;
-    }
   }
 }

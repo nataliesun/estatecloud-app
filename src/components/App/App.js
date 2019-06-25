@@ -4,7 +4,7 @@ import NavBar from '../NavBar/NavBar'
 import LandingPage from '../../routes/LandingPage/LandingPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import Dashboard from '../../routes/Dashboard/Dashboard'
-import NewPropertyForm from '../../components/NewPropertyForm/NewPropertyForm'
+import NewPropertyPage from '../../routes/NewPropertyPage/NewPropertyPage'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import PropertyPage from '../../routes/PropertyPage/PropertyPage'
 import PrivateRoute from '../Utils/PrivateRoute';
@@ -40,7 +40,7 @@ class App extends React.Component {
             <PublicOnlyRoute path={'/login'} component={LoginPage} />
             <PublicOnlyRoute path={'/register'} component={RegistrationPage} />
             <PrivateRoute path={'/dashboard'} component={Dashboard} />
-            <Route path={'/addProperty'} component={NewPropertyForm} />
+            <Route path={'/addProperty'} component={NewPropertyPage} />
             <Route path={'/property/:property_id'} component={PropertyPage} />
             <Route path={'/editProperty/:property_id'} component={EditPropertyPage} />
             <Route component={NotFoundPage} />

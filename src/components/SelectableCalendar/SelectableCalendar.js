@@ -48,7 +48,7 @@ class SelectableCalendar extends React.Component {
     return (
       <>
         <div className={calendarClasses} style={{ "height": "70vh" }}>
-          {this.context.dates.length && <Calendar
+          <Calendar
             // selectable
             localizer={localizer}
             events={this.context.dates}
@@ -56,7 +56,7 @@ class SelectableCalendar extends React.Component {
             scrollToTime={new Date(1970, 1, 1, 6)}
             defaultDate={new Date(Date.now())}
             onSelectEvent={ev => this.openModal(ev)}
-          />}
+          />
         </div>
         <ReservationModal open={modalOpen} reservation={reservation} handleClose={this.handleClose} />
       </>
