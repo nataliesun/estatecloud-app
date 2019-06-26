@@ -1,92 +1,5 @@
 @import '../variables.scss';
 
-
-
-// .NavBar {
-//   height: 40px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-
-//   .nav_burger {
-    
-//     &:hover {
-//       cursor: pointer;
-//     }
-//     .line {
-//       background-color: black;
-//       height: 2px;
-//       width: 26px;
-//       margin-top: 6px;
-//     }
-//   }
-
-//   h1 {
-//     margin: 0;
-//   }
-
-//   a {
-//   color: $main-text-color;
-//   text-decoration: none;
-//   }
-// }
-
-// .NavBar__tagline--wide {
-//   opacity: 0.35;
-//   margin-left: 10px;
-// }
-
-// .NavBar__tagline--narrow {
-//   opacity: 0.35;
-//   // display: block;
-//   text-align: center;
-//   display: none;
-//   margin-top: 10px;
-// }
-
-// .NavBar__not-logged-in, .NavBar__logged-in {
-//   display: flex;
-//   flex: 1;
-//   align-items: center;
-//   justify-content: flex-end;
-//   position: absolute;
-//   background-color: white;
-//   right: 0px;
-//   top: 5vh;
-
-//   a:last-child {
-//     @include highlighted-button;
-//   }
-// }
-
-
-// /* .NavBar__logged-in a {
-//   border: 1px solid rgba(0, 0, 0, 0.25);
-//   padding: 5px 15px;
-//   border-radius: 15px;
-// } */
-
-// @media screen and (min-width: 450px) {
-//   .NavBar {
-//     align-items: baseline;
-
-//     h1 {
-//     font-size: 22pt;
-//     }
-//   }
-// }
-
-// @media screen and (max-width: 490px) {
-//   .NavBar__tagline--wide {
-//     display: none;
-//   }
-
-//   .NavBar__tagline--narrow {
-//     display: inherit;
-//   }
-// }
-
-
 .NavBar__outer {
   background: rgb(25,46,103);
   background: linear-gradient(90deg, rgba(25,46,103,1) 0%, rgba(24,31,79,1) 50%, rgba(26,30,76,1) 100%);
@@ -166,7 +79,7 @@
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: #000;
+    background-color: #fff;
     margin: 5px;
   }
 
