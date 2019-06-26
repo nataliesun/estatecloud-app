@@ -36,5 +36,9 @@
     @include highlighted-button;
     font-size: 16px;
     border: none;
+
+    &:first-of-type {
+      margin-right: 10px;
+    }
   }
 }

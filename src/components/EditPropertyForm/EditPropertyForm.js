@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import PropertyContext from '../../contexts/PropertyContext';
 import PropertyApiService from '../../services/property-api-service';
 
@@ -171,7 +171,9 @@ class EditPropertyForm extends Component {
         <div className="submit-buttons">
 
           <button type="submit">Submit</button>
-          <button type="reset">Cancel</button>
+          <Link to='/dashboard'>
+            <button>Cancel</button>
+          </Link>
         </div>
       </form >
     );

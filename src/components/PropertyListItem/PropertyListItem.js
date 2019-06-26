@@ -35,7 +35,9 @@ class PropertyListItem extends Component {
           </p>
         }
         <p>Monthly profit: ${profit}</p>
-        <button className="edit-btn" onClick={() => this.handlePropertyEdit(id)}>Edit</button>
+        <button className="edit-btn" onClick={() => this.handlePropertyEdit(id)}>
+          Edit
+        </button>
         <button
           className="delete-btn"
           onClick={() => this.handlePropertyDelete(id)}

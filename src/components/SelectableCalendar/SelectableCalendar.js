@@ -5,6 +5,8 @@ import moment from "moment";
 import DateContext from '../../contexts/DateContext';
 import ReservationModal from '../Modals/ReservationModal/ReservationModal';
 
+import './SelectableCalendar.scss'
+
 const propTypes = {}
 
 
@@ -47,7 +49,7 @@ class SelectableCalendar extends React.Component {
     const localizer = Calendar.momentLocalizer(moment);
     return (
       <>
-        <div className={calendarClasses} style={{ "height": "70vh" }}>
+        <div className={calendarClasses} >
           <Calendar
             // selectable
             localizer={localizer}

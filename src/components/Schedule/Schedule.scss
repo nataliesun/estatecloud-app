@@ -11,4 +11,15 @@
     margin-bottom: 20px;
     cursor: pointer;
   }
+
+  @media screen and (max-width: $mobile-min-width) {
+    display: flex;
+    flex-direction: column;
+
+    #Schedule__btn {
+    @include highlighted-button;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  }
 }

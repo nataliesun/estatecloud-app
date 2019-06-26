@@ -1,0 +1,25 @@
+@import '../variables.scss';
+
+.SelectableCalendar {
+
+    
+  height: 70vh;
+
+  @media screen and (max-width: $mobile-min-width) {
+
+    height: 40vh;
+
+    .rbc-toolbar span:last-child {
+      display: none;
+    }
+
+    .rbc-toolbar {
+      display: flex;
+      flex-direction: column-reverse;
+      .rbc-toolbar-label {
+        margin-bottom: 10px;
+      }
+    }
+      
+  }
+}

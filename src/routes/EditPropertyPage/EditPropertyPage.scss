@@ -1,8 +1,26 @@
 @import '../../components/variables.scss';
 
 .EditPropertyPage {
-  h2 {
+  .breadcrumb {
+    display: flex;
+    list-style-type: none;
+    padding: 0 16px 10px 20px;
 
-    padding: $app-padding;
+    li+li:before {
+      padding: 8px;
+      color: black;
+      content: "/\00a0";
+    } 
+
+    a {
+      color: black;
+      text-decoration: none;
+
+      &:hover {
+        color: #01447e;
+        text-decoration: underline;
+      }
+    }
+
   }
 }
