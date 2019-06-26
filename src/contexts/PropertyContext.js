@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 
 
 const PropertyContext = React.createContext({
-  propertyData: {},
+  propertyData: {
+    properties: []
+  },
   error: null,
   setError: () => { },
   clearError: () => { },
@@ -18,7 +20,9 @@ export default PropertyContext
 export class PropertyProvider extends Component {
   state = {
     loggedIn: false,
-    propertyData: {},
+    propertyData: {
+      properties: []
+    },
     error: null,
   };
 
@@ -32,6 +36,7 @@ export class PropertyProvider extends Component {
   }
 
   addProperty = (property) => {
+    // console.log(property)
     this.setState({
       propertyData: {
         properties: [

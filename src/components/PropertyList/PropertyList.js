@@ -28,7 +28,7 @@ class PropertyList extends Component {
   render() {
     return (
       <ul className="PropertyList">
-        {this.props.properties.length
+        {!!this.props.properties.length
           && this.renderProperties()}
         <li className="link-button">
           <Link to='/addProperty'><FontAwesomeIcon icon='plus-circle' /></Link>

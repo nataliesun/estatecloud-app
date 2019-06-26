@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import PropertyContext from '../../contexts/PropertyContext';
-
+import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
+import PropertyContext from '../../contexts/PropertyContext'
+import PropertyApiService from '../../services/property-api-service'
 
 import './NewPropertyForm.scss'
-import PropertyApiService from '../../services/property-api-service';
 
 class NewPropertyForm extends Component {
   static contextType = PropertyContext
@@ -26,11 +26,14 @@ class NewPropertyForm extends Component {
     }
 
     PropertyApiService.postProperty(newProperty)
-      .then(res => this.context.addProperty(res))
+      .then(res => {
+        this.context.addProperty(res)
+        this.props.history.push('/dashboard')
+      })
       .catch(this.context.setError)
 
 
-    this.props.history.push('/dashboard')
+
 
   }
 
@@ -98,4 +101,4 @@ class NewPropertyForm extends Component {
   }
 }
 
-export default NewPropertyForm
+export default withRouter(NewPropertyForm)
