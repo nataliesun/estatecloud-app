@@ -20,7 +20,7 @@ class RegistrationForm extends Component {
       email: email.value,
       password: password.value,
       first_name: first_name.value,
-      nickname: last_name.value,
+      last_name: last_name.value,
     })
       .then(user => {
         first_name.value = ''

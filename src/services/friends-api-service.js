@@ -1,9 +1,9 @@
 import config from '../config';
 import TokenService from './token-service';
 
-const PropertyApiService = {
-  getProperties() {
-    return fetch(`${config.API_ENDPOINT}/properties`, {
+const FriendsApiService = {
+  searchUsers(email) {
+    return fetch(`${config.API_ENDPOINT}/friends/${email}`, {
       headers: {
         authorization: `bearer ${TokenService.getAuthToken()}`
       }
@@ -11,37 +11,19 @@ const PropertyApiService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
-  getPropertiesForUser(email) {
-    return fetch(`${config.API_ENDPOINT}/properties/${email}`, {
-      headers: {
-        authorization: `bearer ${TokenService.getAuthToken()}`
-      }
-    }).then(res =>
-      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
-    );
-  },
-  getProperty(id) {
-    return fetch(`${config.API_ENDPOINT}/properties/${id}`, {
-      headers: {
-        authorization: `bearer ${TokenService.getAuthToken()}`
-      }
-    }).then(res =>
-      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
-    );
-  },
-  editProperty(id, newProperty) {
+  editFriends(id, newFriends) {
     return fetch(`${config.API_ENDPOINT}/properties/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
         authorization: `bearer ${TokenService.getAuthToken()}`
       },
-      body: JSON.stringify(newProperty)
+      body: JSON.stringify(newFriends)
     }).then(res =>
       !res.ok ? res.then(e => Promise.reject(e)) : res
     );
   },
-  postProperty(property) {
+  postFriends(property) {
     return fetch(`${config.API_ENDPOINT}/properties`, {
       method: 'POST',
       headers: {
@@ -53,7 +35,7 @@ const PropertyApiService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
-  deleteProperty(property_id) {
+  deleteFriends(property_id) {
     return fetch(`${config.API_ENDPOINT}/properties/${property_id}`, {
       method: 'DELETE',
       headers: {
@@ -64,4 +46,4 @@ const PropertyApiService = {
   }
 };
 
-export default PropertyApiService;
+export default FriendsApiService;

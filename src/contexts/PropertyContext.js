@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 
+const nullPropertyData = {
+  properties: []
+}
+
 
 const PropertyContext = React.createContext({
-  propertyData: {
-    properties: []
-  },
+  propertyData: {},
   error: null,
   setError: () => { },
   clearError: () => { },
   addProperty: () => { },
   removeProperty: () => { },
-  clearProperties: () => { },
   handleLoginSuccess: () => { },
   handleLogout: () => { }
 })
@@ -19,10 +20,8 @@ export default PropertyContext
 
 export class PropertyProvider extends Component {
   state = {
+    propertyData: nullPropertyData,
     loggedIn: false,
-    propertyData: {
-      properties: []
-    },
     error: null,
   };
 
@@ -56,9 +55,6 @@ export class PropertyProvider extends Component {
     })
   }
 
-  clearProperties = () => {
-    this.setProperties([])
-  }
 
   setPropertyData = propertyData => {
     this.setState({ propertyData })
@@ -85,7 +81,6 @@ export class PropertyProvider extends Component {
       setError: this.setError,
       clearError: this.clearError,
       setPropertyData: this.setPropertyData,
-      clearProperties: this.clearProperties,
       addProperty: this.addProperty,
       removeProperty: this.removeProperty,
       handleLoginSuccess: this.handleLoginSuccess,

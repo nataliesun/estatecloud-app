@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom'
 import PropertyContext from '../../contexts/PropertyContext'
 import Schedule from '../../components/Schedule/Schedule';
 
-import './PropertyPage.scss'
+import './FriendsPropertyPage.scss'
 import PropertyApiService from '../../services/property-api-service';
 
-class PropertyPage extends Component {
+class FriendsPropertyPage extends Component {
   static contextType = PropertyContext;
+
+  state = {
+    address: ''
+  }
 
   static defaultProps = {
     match: {
@@ -15,21 +19,18 @@ class PropertyPage extends Component {
     }
   }
 
-  renderAddress = (id) => {
-    return this.context.propertyData.properties.find(p => p.id === Number(id)).address
-  }
 
   componentDidMount() {
-    PropertyApiService.getAddress(this.props.match.params.property_id)
+    PropertyApiService.getProperty(this.props.match.params.property_id)
+      .then(property => this.setState({
+        address: property.address
+      }))
   }
 
   render() {
-    const { property_id } = this.props.match.params;
-
-
 
     return (
-      <div className="PropertyPage">
+      <div className="FriendsPropertyPage">
         <ul className="breadcrumb">
           <li>
             <Link to="/dashboard">
@@ -37,7 +38,12 @@ class PropertyPage extends Component {
             </Link>
           </li>
           <li>
-            {this.context.propertyData.properties && this.renderAddress(property_id)}
+            <Link to="/friends">
+              Search Friends
+            </Link>
+          </li>
+          <li>
+            {this.state.address}
           </li>
         </ul>
         <Schedule {...this.props} />
@@ -46,4 +52,4 @@ class PropertyPage extends Component {
   }
 }
 
-export default PropertyPage;
+export default FriendsPropertyPage;

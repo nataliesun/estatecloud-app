@@ -161,7 +161,7 @@ class EditPropertyForm extends Component {
 
 
           <label htmlFor="intial-price">Initial price:</label>
-          <input type="number" name="initial_price" value={this.state.currentProp.initial_price} onChange={e => this.handleInitalChange(e.target.value)} />
+          <input type="number" name="initial_price" value={this.state.currentProp.initial_price} onChange={e => this.handleInitialChange(e.target.value)} />
 
 
           <label htmlFor="mortgage-payment">Mortgage payment: </label>

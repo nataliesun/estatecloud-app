@@ -23,14 +23,20 @@ class NavBar extends Component {
     return (
       <>
         <li>
-          <NavLink to="/addProperty">
-            <FontAwesomeIcon icon="plus" className="blue" /> Property
-                </NavLink>
-        </li>
-        <li>
           <NavLink to='/dashboard' >
             Dashboard
-              </NavLink>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/addProperty">
+            <FontAwesomeIcon icon="plus" className="blue" /> Property
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/friends' >
+            <FontAwesomeIcon icon="search" className="blue" />{" "}
+            Friends
+          </NavLink>
         </li>
         <li onClick={this.handleLogoutClick}>
           Logout

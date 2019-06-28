@@ -14,6 +14,8 @@ import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 
 import './App.scss';
 import EditPropertyPage from '../../routes/EditPropertyPage/EditPropertyPage';
+import FriendsPage from '../../routes/FriendsPage/FriendsPage';
+import FriendsPropertyPage from '../../routes/FriendsPropertyPage/FriendsPropertyPage';
 
 class App extends React.Component {
   state = { hasError: false };
@@ -40,6 +42,8 @@ class App extends React.Component {
             <PublicOnlyRoute path={'/login'} component={LoginPage} />
             <PublicOnlyRoute path={'/register'} component={RegistrationPage} />
             <PrivateRoute path={'/dashboard'} component={Dashboard} />
+            <Route exact path={'/friends/'} component={FriendsPage} />
+            <Route path={'/friends/:property_id'} component={FriendsPropertyPage} />
             <Route path={'/addProperty'} component={NewPropertyPage} />
             <Route path={'/property/:property_id'} component={PropertyPage} />
             <Route path={'/editProperty/:property_id'} component={EditPropertyPage} />

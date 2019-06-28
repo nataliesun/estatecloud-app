@@ -9,14 +9,15 @@ import { PropertyProvider } from './contexts/PropertyContext';
 import { DateProvider } from './contexts/DateContext';
 
 import {
-  faDoorOpen, faPlusCircle, faPlus, faTimes
+  faDoorOpen, faPlusCircle, faPlus, faTimes, faSearch
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
   faDoorOpen, // logo
   faPlusCircle,
   faPlus,
-  faTimes
+  faTimes,
+  faSearch
 )
 
 ReactDOM.render(

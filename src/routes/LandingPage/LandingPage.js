@@ -14,18 +14,24 @@ class LandingPage extends Component {
         <img src={schedule} alt="schedule" className="hero" />
         <section>
           <h3>Get organized</h3>
-          <img src={collecting} alt="collecting" />
-          <p>EstateCloud helps you visualize all your properties in one place, so you never miss an important date.</p>
+          <div className="description">
+            <img src={collecting} alt="collecting" />
+            <p>EstateCloud helps you visualize all your properties in one place, so you never miss an important date.</p>
+          </div>
         </section>
         <section>
           <h3>Information at a glance</h3>
-          <img src={noteList} alt="note list" />
-          <p>EstateCloud provides you with a quick and simple interface that helps you keep track of what's happening at your properties.</p>
+          <div className="description">
+            <img src={noteList} alt="note list" />
+            <p>EstateCloud provides you with a quick and simple interface that helps you keep track of what's happening at your properties.</p>
+          </div>
         </section>
         <section>
           <h3>Connect with your friends</h3>
-          <img src={calendar} alt="calendar" />
-          <p>Interactive calendars to help you keep track of who's staying when and where.</p>
+          <div className="description">
+            <img src={calendar} alt="calendar" />
+            <p>Interactive calendars to help you keep track of who's staying when and where.</p>
+          </div>
         </section>
 
         <section>

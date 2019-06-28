@@ -1,0 +1,74 @@
+@import '../../components/variables.scss';
+
+.FriendsPage {
+  padding: $app-padding;
+  h2 {
+    margin-bottom: $app-padding;
+  }
+
+  input {
+    @include big-input;
+    margin: $app-padding 0;
+    max-width: 260px;
+    display: block;
+  }
+
+  button {
+    @include highlighted-button;
+  }
+
+  img {
+    max-width: 30%;
+    margin-top: 10vh;
+    margin-right: 15vw;
+  }
+
+  .friends_search {
+    display: flex;
+    justify-content: space-between
+  }
+
+  h3 {
+    margin-bottom: $app-padding;
+  }
+
+  p {
+    margin: $app-padding 0;
+  }
+
+  .propertyList {
+    list-style-type: none;
+    justify-content: space-between;
+    display: flex;
+
+    li {
+      background-color: rgb(21, 21, 95);
+      box-shadow:   0 4px 8px 0 rgba(172, 172, 172, 0.2), 0 6px 20px 0 rgba(145, 145, 145, 0.19);
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+
+      &:first-of-type {
+        margin-right: $app-padding;
+      }
+
+      &:hover {
+        background-color: white;
+        cursor: pointer;
+        -webkit-box-shadow:inset 0px 0px 0px 4px rgb(21, 21, 95);
+        -moz-box-shadow:inset 0px 0px 0px 4px rgb(21, 21, 95);
+        box-shadow:inset 0px 0px 0px 4px rgb(21, 21, 95);
+        a {
+
+          color: rgb(21, 21, 95);
+        }
+      }
+
+       a {
+         color: white;
+         text-decoration: none;
+       }
+    }
+  }
+}
