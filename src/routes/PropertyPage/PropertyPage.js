@@ -15,18 +15,19 @@ class PropertyPage extends Component {
     }
   }
 
-  renderAddress = (id) => {
-    return this.context.propertyData.properties.find(p => p.id === Number(id)).address
+  state = {
+    address: ''
   }
 
   componentDidMount() {
-    PropertyApiService.getAddress(this.props.match.params.property_id)
+    PropertyApiService.getProperty(this.props.match.params.property_id)
+      .then(property => this.setState({
+        address: property.address
+      }))
   }
 
   render() {
-    const { property_id } = this.props.match.params;
-
-
+    const { address } = this.state;
 
     return (
       <div className="PropertyPage">
@@ -37,7 +38,7 @@ class PropertyPage extends Component {
             </Link>
           </li>
           <li>
-            {this.context.propertyData.properties && this.renderAddress(property_id)}
+            {!!address && address}
           </li>
         </ul>
         <Schedule {...this.props} />

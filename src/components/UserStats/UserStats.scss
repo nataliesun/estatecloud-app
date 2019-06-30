@@ -29,8 +29,16 @@
     width: 50%;
     max-height: 20vh;
     padding: 20px;
+
+    img {
+      max-width: 30%;
+    }
     
     &:first-of-type {
+      border-right: 1px solid rgb(235, 235, 235);
+    }
+
+    &:nth-of-type(2) {
       border-right: 1px solid rgb(235, 235, 235);
     }
 

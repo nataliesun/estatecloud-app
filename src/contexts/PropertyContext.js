@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const nullPropertyData = {
+export const nullPropertyData = {
   properties: []
 }
 
