@@ -111,7 +111,7 @@ class NavBar extends Component {
   }
 
   render() {
-    const navClass = this.state.visible ? "NavBar" : "NavBar__hidden";
+    const navClass = this.state.visible && this.state.prevScrollpos > 1 ? "NavBar back" : this.state.visible ? "NavBar" : "NavBar NavBar__hidden";
     const links = this.context.loggedIn ? this.renderLogoutLink() : this.renderLoginLink();
     return (
       <>

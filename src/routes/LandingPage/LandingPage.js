@@ -28,8 +28,8 @@ class LandingPage extends Component {
 
         </section>
         <section className="blurb">
-          <h3>_ 01</h3>
           <div className="description">
+            <h3><span>_</span>01</h3>
             <h3>Get organized</h3>
             <p>Keep all your properties information in one place, so you never miss an important date.</p>
             <img src={collecting} alt="collecting" />
@@ -37,7 +37,7 @@ class LandingPage extends Component {
         </section>
         <section className="blurb">
           <div className="description">
-            <h3>_ 02</h3>
+            <h3><span>_</span>02</h3>
             <h3>Information at a glance</h3>
             <p>EstateCloud provides you with a quick and simple interface that helps you keep track of what's happening at your properties.</p>
             <img src={noteList} alt="note list" />
@@ -45,7 +45,7 @@ class LandingPage extends Component {
         </section>
         <section className="blurb">
           <div className="description">
-            <h3>_ 03</h3>
+            <h3><span>_</span>03</h3>
             <h3>Connect with your friends</h3>
             <p>Interactive calendars to track who's staying when and where.</p>
             <img src={calendar} alt="calendar" />
