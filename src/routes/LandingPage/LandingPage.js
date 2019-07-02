@@ -46,8 +46,8 @@ class LandingPage extends Component {
         <section className="blurb">
           <div className="description">
             <h3><span>_</span>03</h3>
-            <h3>Connect with your friends</h3>
-            <p>Interactive calendars to track who's staying when and where.</p>
+            <h3>Find Your Friends</h3>
+            <p>Connect interactive calendars to track who's staying when and where.</p>
             <img src={calendar} alt="calendar" />
           </div>
         </section>

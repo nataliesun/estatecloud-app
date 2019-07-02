@@ -2,49 +2,53 @@
 
 .PropertyListItem {
   list-style-type: none;
-  background-color: white;
+  background-color: #105fd560;
   min-height: 20vh;
-  box-shadow:   0 4px 8px 0 rgba(172, 172, 172, 0.2), 0 6px 20px 0 rgba(145, 145, 145, 0.19);
+  box-shadow:   0 4px 8px 0 rgba(59, 58, 58, 0.2), 0 6px 20px 0 rgba(49, 44, 44, 0.19);
   margin-bottom: 20px;
   border-radius: 5px;
 
-  &:first-of-type {
-    // border-top: 1px solid rgb(218, 218, 218);
-  }
+  // &:nth-of-type(2n) {
+
+  //   background-color: #512dcf;
+  // }
 
   h2 {
     padding: 20px 0;
+    color: white;
   }
 
   .edit-btn {
     // @include highlighted-button($button-highlight);
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-right: 10px;
-    cursor: pointer;
-
-    	border-radius: 100rem;
-      padding: 1rem;
-      font-size: 1rem;
-      padding: .2rem 1.4rem;
-      box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
-      border: solid 3px transparent;
-      background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, rgba(25,46,103,1), rgba(26,30,76,1));
-      background-origin: border-box;
-      background-clip: content-box, border-box;
-      box-shadow: 2px 1000px 1px #fff inset;
+    @include highlighted-button(white);
+    color: $button-purple;
+    transition: .5s;
   
     &:hover {
       box-shadow: none;
+      background: $button-purple;
       color: white;
+      transform: translate(4px, 2px);
     }
     
 
   }
 
   .delete-btn {
-    @include highlighted-button($button-purple);
+    @include highlighted-button;
     cursor: pointer;
+    transition: .5s;
+
+    &:hover {
+      box-shadow: none;
+      background: white;
+      color: $button-purple;
+      transform: translate(4px, 2px);
+    }
+
   }
 
   a {
@@ -53,6 +57,6 @@
   }
 
   li, p {
-    color: $main-text-color;
+    color: white;
   }
 }

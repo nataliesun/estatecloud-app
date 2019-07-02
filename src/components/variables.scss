@@ -5,24 +5,29 @@ $app-padding: 20px;
 $mobile-min-width: 768px;
 
 $button-highlight: rgb(255, 121, 121);
-$button-purple: #7979ff;
-$button-green: #70dfba;
+$button-purple: #512dcf;
+$button-green: #ad3fa8;
 $main-text-color: #444;
+$blue: #105fd560;
+$box-shadow: 0 4px 8px 0 rgba(59, 58, 58, 0.2), 0 6px 20px 0 rgba(49, 44, 44, 0.19);
 
 
 $main-font: 'Montserrat', sans-serif;
 $sub-font: 'Hind', sans-serif;
 
+$main-gradient: linear-gradient(159deg,#512dcf 31%,#10a3d5 100%) #512dcf;
 
-@mixin highlighted-button($color: $button-highlight) {
-  background: rgb(25,46,103);
-  background: linear-gradient(90deg, rgba(25,46,103,1) 0%, rgba(24,31,79,1) 50%, rgba(26,30,76,1) 100%);
+
+@mixin highlighted-button($color: $button-purple) {
+
+  background: $color;
   color: white;
   padding: 5px 15px;
   border-radius: 15px;
   border: none;
   font-size: 16px;
   cursor: pointer;
+  box-shadow: $box-shadow;
 }
 
 @mixin big-input {

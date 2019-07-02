@@ -22,6 +22,7 @@ class Dashboard extends Component {
 
 
   componentDidMount() {
+
     this.context.clearError()
     PropertyApiService.getProperties()
       .then(this.context.setPropertyData)

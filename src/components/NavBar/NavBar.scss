@@ -90,7 +90,10 @@
     right: 0px;
     height: 100vh;
     top: 0;
-    background: #181f4f;
+    background: $main-gradient;
+
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
     flex-direction: column;
     width: 50%;
     transform: translateX(100%);
@@ -112,6 +115,9 @@
 
 .nav-active {
   transform: translateX(0%);
+      -webkit-box-shadow: -22px 17px 33px 0px rgba(0,0,0,0.61);
+-moz-box-shadow: -22px 17px 33px 0px rgba(0,0,0,0.61);
+box-shadow: -22px 17px 33px 0px rgba(0,0,0,0.61);
 }
 
 @keyframes navLinkFade {

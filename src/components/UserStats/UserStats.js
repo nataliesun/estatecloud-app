@@ -84,7 +84,7 @@ function createAvailabilityChart(availability) {
       {
         data,
         backgroundColor: [
-          "rgb(255, 121, 121)", "#7979ff", "#70dfba"
+          "#105fd560", "#512dcf", "#10a3d5"
         ]
       }
     ]

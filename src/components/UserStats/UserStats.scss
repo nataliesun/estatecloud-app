@@ -3,11 +3,12 @@
 .UserStats {
   border-radius: 5px;
   margin-bottom: 20px;
-  background-color: white;
+  // background-color: $button-purple;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  box-shadow:  0 4px 8px 0 rgba(172, 172, 172, 0.2), 0 6px 20px 0 rgba(145, 145, 145, 0.19);
+  // box-shadow:  0 4px 8px 0 rgba(172, 172, 172, 0.2), 0 6px 20px 0 rgba(145, 145, 145, 0.19);
+  box-shadow: $box-shadow;
   // padding: 20px; 
 
   .stat-container {
@@ -38,17 +39,14 @@
       max-width: 30%;
     }
     
-    &:first-of-type {
-      border-right: 1px solid rgb(235, 235, 235);
-    }
+    // &:first-of-type {
+    //   border-right: 1px solid rgba(194, 194, 194, 0.322);
+    // }
 
-    &:nth-of-type(2) {
-      border-right: 1px solid rgb(235, 235, 235);
-    }
 
     p {
       padding-top: 10px;
-      color: $main-text-color;
+      color: white;
       opacity: .35;
     }
   }
@@ -58,7 +56,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border-top: 1px solid rgb(235, 235, 235);
+    // border-top: 1px solid rgba(255, 255, 255, 0.288);
     width: 100%;
     flex: 1;
 
@@ -66,18 +64,21 @@
       flex: 1;
       padding: 20px;
 
-      &:first-of-type {
-        border-right: 1px solid rgb(235, 235, 235);
-      }
+      // &:first-of-type {
+      //   border-right: 1px solid rgb(235, 235, 235);
+      // }
     }
     
     p {
-      color: $main-text-color;
+      color: white;
       opacity: .35;
     }
   }
 
-  h2, h3, h4 {
-    color: $main-text-color;
+   h3 {
+     font-size: 1.5em;
+    color: white;
   }
+
+
 }
