@@ -17,6 +17,7 @@ exports[`EditPropertyForm Component renders the UI as expected 1`] = `
       name="address"
       onChange={[Function]}
       type="text"
+      value=""
     />
     <label
       htmlFor="city"
@@ -27,6 +28,7 @@ exports[`EditPropertyForm Component renders the UI as expected 1`] = `
       name="city"
       onChange={[Function]}
       type="text"
+      value=""
     />
     <label
       htmlFor="state"
@@ -37,10 +39,11 @@ exports[`EditPropertyForm Component renders the UI as expected 1`] = `
       name="state"
       onChange={[Function]}
       type="text"
+      value=""
     />
   </div>
   <div
-    className="input-section"
+    className="input-section-row"
   >
     <label
       htmlFor="available"
@@ -95,7 +98,9 @@ exports[`EditPropertyForm Component renders the UI as expected 1`] = `
     </label>
     <input
       name="rent_price"
+      onChange={[Function]}
       type="number"
+      value={0}
     />
     <label
       htmlFor="intial-price"
@@ -104,7 +109,9 @@ exports[`EditPropertyForm Component renders the UI as expected 1`] = `
     </label>
     <input
       name="initial_price"
+      onChange={[Function]}
       type="number"
+      value={0}
     />
     <label
       htmlFor="mortgage-payment"
@@ -113,8 +120,10 @@ exports[`EditPropertyForm Component renders the UI as expected 1`] = `
     </label>
     <input
       name="mortgage_payment"
+      onChange={[Function]}
       placeholder="1500"
       type="number"
+      value={0}
     />
   </div>
   <div
@@ -125,11 +134,14 @@ exports[`EditPropertyForm Component renders the UI as expected 1`] = `
     >
       Submit
     </button>
-    <button
-      type="reset"
+    <a
+      href="/dashboard"
+      onClick={[Function]}
     >
-      Reset
-    </button>
+      <button>
+        Cancel
+      </button>
+    </a>
   </div>
 </form>
 `;

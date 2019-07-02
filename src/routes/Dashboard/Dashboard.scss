@@ -7,4 +7,10 @@
   h2 {
     padding-bottom:  20px;
   }
+
+  @media screen and (max-width: $app-max-width) {
+    overflow: hidden;
+  }
+  
 }
+

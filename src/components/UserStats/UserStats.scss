@@ -3,7 +3,7 @@
 .UserStats {
   border-radius: 5px;
   margin-bottom: 20px;
-  // height: 30vh;
+  background-color: white;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -17,6 +17,10 @@
     padding: 20px 0;
     width: 100%;
     height: 20vh;
+  }
+
+  @media screen and (max-width: $app-max-width) {
+    
   }
 
   .other-stats {
@@ -49,21 +53,31 @@
     }
   }
 
-  .portfolio_value {
+  .reservations {
     padding: 20px 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-     border-top: 1px solid rgb(235, 235, 235);
-    // border-bottom: 1px solid rgb(235, 235, 235);
-    // border-left: 1px solid rgb(235, 235, 235);
-    // border-right: 1px solid rgb(235, 235, 235);
+    border-top: 1px solid rgb(235, 235, 235);
     width: 100%;
     flex: 1;
+
+    div {
+      flex: 1;
+      padding: 20px;
+
+      &:first-of-type {
+        border-right: 1px solid rgb(235, 235, 235);
+      }
+    }
     
     p {
       color: $main-text-color;
       opacity: .35;
     }
+  }
+
+  h2, h3, h4 {
+    color: $main-text-color;
   }
 }

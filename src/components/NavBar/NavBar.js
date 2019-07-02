@@ -4,12 +4,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TokenService from '../../services/token-service';
 import './NavBar.scss';
 import PropertyContext from '../../contexts/PropertyContext';
+import classnames from "classnames";
 
 class NavBar extends Component {
   static contextType = PropertyContext
 
+  state = {
+    prevScrollpos: window.pageYOffset,
+    visible: true
+  }
+
 
   componentDidMount() {
+
+    window.addEventListener("scroll", this.handleScroll);
+
     TokenService.hasAuthToken() ? this.context.handleLoginSuccess() : this.context.handleLogout()
   }
 
@@ -83,29 +92,47 @@ class NavBar extends Component {
 
   }
 
+  handleScroll = () => {
+    const { prevScrollpos } = this.state;
+
+    const currentScrollPos = window.pageYOffset;
+    const visible = prevScrollpos > currentScrollPos;
+
+    this.setState({
+      prevScrollpos: currentScrollPos,
+      visible
+    });
+  };
+
+
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
   render() {
+    const navClass = this.state.visible ? "NavBar" : "NavBar__hidden";
     const links = this.context.loggedIn ? this.renderLogoutLink() : this.renderLoginLink();
     return (
       <>
-        <div className="NavBar__outer">
-          <nav className="NavBar">
-            <NavLink to="/">
-              <FontAwesomeIcon className="blue" icon="door-open" />
-              <h1>
-                EstateCloud
-              </h1>
-            </NavLink>
-            <div className="burger" onClick={e => this.navSlide(e)}>
-              <div className="line1"></div>
-              <div className="line2"></div>
-              <div className="line3"></div>
-            </div>
-            <ul className="nav-links">
-              {links}
-            </ul>
 
-          </nav>
-        </div>
+        <nav className={navClass}>
+          <NavLink to="/">
+            <FontAwesomeIcon className="blue" icon="door-open" />
+            <h1>
+              EstateCloud
+              </h1>
+          </NavLink>
+          <div className="burger" onClick={e => this.navSlide(e)}>
+            <div className="line1"></div>
+            <div className="line2"></div>
+            <div className="line3"></div>
+          </div>
+          <ul className="nav-links">
+            {links}
+          </ul>
+
+        </nav>
       </>
     );
   }

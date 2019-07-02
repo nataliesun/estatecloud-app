@@ -51,17 +51,20 @@ class UserStats extends Component {
             <p>Availability</p>
           </div>
           <div className="other-stats">
+            <h3>{portfolio_value && portfolio_value.toLocaleString()}</h3>
+            <p>Estimated Portfolio Value</p>
+          </div>
+
+        </div>
+        <div className="reservations">
+          <div>
             <h3>{this.state.reservations.owned}</h3>
             <p>Reservations at Owned Properties</p>
           </div>
-          <div className="other-stats">
+          <div>
             <h3>{this.state.reservations.made}</h3>
             <p>Reservations Made</p>
           </div>
-        </div>
-        <div className="portfolio_value">
-          <h3>{portfolio_value && portfolio_value.toLocaleString()}</h3>
-          <p>Estimated Portfolio Value</p>
         </div>
       </div>
     );

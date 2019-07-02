@@ -10,39 +10,9 @@ exports[`UserStats Component should render correctly with no props 1`] = `
     <div
       className="other-stats"
     >
-      <Doughnut
-        data={
-          Object {
-            "datasets": Array [
-              Object {
-                "backgroundColor": Array [
-                  "rgb(255, 121, 121)",
-                  "#7979ff",
-                  "#70dfba",
-                ],
-                "data": Array [
-                  1,
-                  0,
-                  0,
-                ],
-              },
-            ],
-            "labels": Array [
-              "Available",
-              "Occupied",
-              "Rented",
-            ],
-          }
-        }
-        options={
-          Object {
-            "legend": Object {
-              "display": false,
-            },
-            "maintainAspectRatio": false,
-            "responsive": true,
-          }
-        }
+      <img
+        alt="blank_canvas"
+        src="undraw_blank_canvas.svg"
       />
       <p>
         Availability
@@ -53,7 +23,15 @@ exports[`UserStats Component should render correctly with no props 1`] = `
     >
       <h3 />
       <p>
-        Reservations
+        Reservations at Owned Properties
+      </p>
+    </div>
+    <div
+      className="other-stats"
+    >
+      <h3 />
+      <p>
+        Reservations Made
       </p>
     </div>
   </div>

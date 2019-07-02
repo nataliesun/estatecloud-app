@@ -10,13 +10,16 @@ $button-green: #70dfba;
 $main-text-color: #444;
 
 
+$main-font: 'Montserrat', sans-serif;
+$sub-font: 'Hind', sans-serif;
+
+
 @mixin highlighted-button($color: $button-highlight) {
   background: rgb(25,46,103);
   background: linear-gradient(90deg, rgba(25,46,103,1) 0%, rgba(24,31,79,1) 50%, rgba(26,30,76,1) 100%);
   color: white;
   padding: 5px 15px;
   border-radius: 15px;
-  // margin-left: 10px;
   border: none;
   font-size: 16px;
   cursor: pointer;

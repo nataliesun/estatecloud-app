@@ -1,3 +1,5 @@
+@import './components/variables.scss';
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,6 +7,7 @@
 }
 
 body {
+  background: linear-gradient(159deg,#512dcf 31%,#10a3d5 100%) #512dcf;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -21,5 +24,18 @@ code {
 }
 
 .blue {
-  color: rgb(40, 93, 139);
+  color: white;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+p, li {
+  font-family: 'Hind', sans-serif;
+}
+
+html {
+  min-height: 100vh;
 }

@@ -43,7 +43,7 @@ exports[`NewPropertyForm Component renders the UI as expected 1`] = `
     />
   </div>
   <div
-    className="input-section"
+    className="input-section-row"
   >
     <label
       htmlFor="available"
