@@ -26,7 +26,8 @@ class FriendsPage extends Component {
         friend: {
           properties,
           email: friendsSearch.value
-        }
+        },
+        error: null
       }))
       .catch(e => this.setState({ error: e.error }))
     // }
