@@ -11,8 +11,17 @@ const DateApiService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
+  getReservationDetails(reservation_id) {
+    return fetch(`${config.API_ENDPOINT}/reservations/reservation/${reservation_id}`, {
+      headers: {
+        authorization: `bearer ${TokenService.getAuthToken()}`
+      }
+    }).then(res =>
+      !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
+    );
+  },
   getDatesForProperty(propertyId) {
-    return fetch(`${config.API_ENDPOINT}/reservations/${propertyId}`, {
+    return fetch(`${config.API_ENDPOINT}/reservations/property/${propertyId}`, {
       headers: {
         authorization: `bearer ${TokenService.getAuthToken()}`
       }

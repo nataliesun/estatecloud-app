@@ -13,7 +13,9 @@ class ReservationModal extends Component {
     handleClose: () => { },
     reservation: {
       title: '',
-
+      createdBy: '',
+      createdOn: '',
+      id: null,
     }
   }
 
@@ -40,7 +42,8 @@ class ReservationModal extends Component {
         <h3>
           {reservation.title}
         </h3>
-        <p>Info</p>
+        <p>Created by: {reservation.createdBy}</p>
+        <p>On: {reservation.createdOn}</p>
         <button onClick={this.handleDeleteReservation} id="submit-btn">Delete</button>
       </div>
     );

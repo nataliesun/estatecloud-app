@@ -6,6 +6,7 @@ import DateContext from '../../contexts/DateContext';
 import ReservationModal from '../Modals/ReservationModal/ReservationModal';
 
 import './SelectableCalendar.scss'
+import DateApiService from '../../services/date-api-service';
 
 const propTypes = {}
 
@@ -22,14 +23,19 @@ class SelectableCalendar extends React.Component {
   }
 
   openModal = (event) => {
-    // console.log(event.id)
-    this.setState({
-      modalOpen: !this.state.modalOpen,
-      reservation: {
-        title: event.title,
-        id: event.id
-      }
-    })
+    DateApiService.getReservationDetails(event.id)
+      .then(details => {
+        this.setState({
+          modalOpen: !this.state.modalOpen,
+          reservation: {
+            title: event.title,
+            createdBy: details.first_name,
+            createdOn: new Date(details.date_created).toLocaleDateString(),
+            id: event.id
+          }
+        })
+      })
+      .catch(this.context.setError)
   }
 
   handleClose = () => {
