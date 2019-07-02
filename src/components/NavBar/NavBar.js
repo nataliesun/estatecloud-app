@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TokenService from '../../services/token-service';
 import './NavBar.scss';
 import PropertyContext from '../../contexts/PropertyContext';
-import classnames from "classnames";
+
 
 class NavBar extends Component {
   static contextType = PropertyContext

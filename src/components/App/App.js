@@ -38,15 +38,15 @@ class App extends React.Component {
             <p className="red">There was an error! Oh no!</p>
           )}
           <Switch>
-            <Route exact path={'/'} component={LandingPage} />
+            <PublicOnlyRoute exact path={'/'} component={LandingPage} />
             <PublicOnlyRoute path={'/login'} component={LoginPage} />
             <PublicOnlyRoute path={'/register'} component={RegistrationPage} />
             <PrivateRoute path={'/dashboard'} component={Dashboard} />
-            <Route exact path={'/friends/'} component={FriendsPage} />
-            <Route path={'/friends/:property_id'} component={FriendsPropertyPage} />
-            <Route path={'/addProperty'} component={NewPropertyPage} />
-            <Route path={'/property/:property_id'} component={PropertyPage} />
-            <Route path={'/editProperty/:property_id'} component={EditPropertyPage} />
+            <PrivateRoute exact path={'/friends/'} component={FriendsPage} />
+            <PrivateRoute path={'/friends/:property_id'} component={FriendsPropertyPage} />
+            <PrivateRoute path={'/addProperty'} component={NewPropertyPage} />
+            <PrivateRoute path={'/property/:property_id'} component={PropertyPage} />
+            <PrivateRoute path={'/editProperty/:property_id'} component={EditPropertyPage} />
             <Route component={NotFoundPage} />
           </Switch>
         </main>
