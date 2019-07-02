@@ -57,7 +57,6 @@ export class PropertyProvider extends Component {
 
 
   setPropertyData = propertyData => {
-    console.log(!propertyData)
     if (!propertyData.properties) {
       return this.setState({ propertyData: nullPropertyData })
     }
