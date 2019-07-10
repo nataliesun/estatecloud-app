@@ -157,7 +157,7 @@ class EditPropertyForm extends Component {
 
         <div className="input-section">
           <label htmlFor="rent-price">Rent price:</label>
-          <input type="number" name="rent_price" value={this.state.currentProp.rent_price} onChange={e => this.handleRentChange(e.target.value)} />
+          <input type="number" autoComplete="rent_price" name="rent_price" value={this.state.currentProp.rent_price} onChange={e => this.handleRentChange(e.target.value)} />
 
 
           <label htmlFor="intial-price">Initial price:</label>

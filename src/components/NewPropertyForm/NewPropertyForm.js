@@ -80,7 +80,7 @@ class NewPropertyForm extends Component {
 
         <div className="input-section">
           <label htmlFor="rent-price">Rent price:</label>
-          <input type="number" name="rent_price" placeholder="2000" />
+          <input type="number" name="rent_price" placeholder="2000" autoComplete="rent_price" id="rent_price" />
 
 
           <label htmlFor="intial-price">Initial price:</label>

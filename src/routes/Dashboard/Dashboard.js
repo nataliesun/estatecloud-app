@@ -25,7 +25,10 @@ class Dashboard extends Component {
 
     this.context.clearError()
     PropertyApiService.getProperties()
-      .then(this.context.setPropertyData)
+      .then(
+        // res => console.log(res)
+        this.context.setProperties
+      )
       .catch(this.context.setError)
 
     UserApiService.getUserName()
@@ -37,15 +40,45 @@ class Dashboard extends Component {
 
 
   render() {
-    const { propertyData } = this.context
+    const { properties } = this.context
+    const { availability, portfolio_value } = calculatePropertyInfo(properties)
     return (
       <div className="Dashboard" style={{ "textAlign": "center" }}>
-        {!this.state.name && <h2>Hello,{" "}{this.state.first_name}!</h2>}
-        <UserStats availability={propertyData.availability} portfolio_value={propertyData.portfolio_value} />
-        <PropertyList properties={propertyData.properties} />
+        {
+          !this.state.name
+          && <h2>Hello,{" "}{this.state.first_name}!</h2>
+        }
+        <UserStats
+          availability={availability}
+          portfolio_value={portfolio_value}
+        />
+        <PropertyList
+          properties={properties}
+        />
       </div>
     );
   }
 }
 
 export default Dashboard;
+
+function calculatePropertyInfo(properties = []) {
+  let availability = [0, 0, 0]
+
+  for (let i = 0; i < properties.length; i++) {
+    if (properties[i].status === "available")
+      availability[0]++
+
+    else if (properties[i].status === "occupied")
+      availability[1]++
+
+    else
+      availability[2]++
+  }
+
+  return {
+    availability,
+    portfolio_value: properties.reduce((a, b) => { return a + b.initial_price }, 0)
+  }
+
+}

@@ -9,16 +9,18 @@
 
     li+li:before {
       padding: 8px;
-      color: black;
+      color: white;
       content: "/\00a0";
+
     } 
 
     a {
-      color: black;
+      color: white;
       text-decoration: none;
 
+
       &:hover {
-        color: #01447e;
+        font-weight: bold;
         text-decoration: underline;
       }
     }

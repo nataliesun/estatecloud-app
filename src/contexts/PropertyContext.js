@@ -6,6 +6,8 @@ export const nullPropertyData = {
 
 
 const PropertyContext = React.createContext({
+  properties: [],
+  loggedIn: false,
   propertyData: {},
   error: null,
   setError: () => { },
@@ -13,13 +15,15 @@ const PropertyContext = React.createContext({
   addProperty: () => { },
   removeProperty: () => { },
   handleLoginSuccess: () => { },
-  handleLogout: () => { }
+  handleLogout: () => { },
+  setProperties: () => { },
 })
 
 export default PropertyContext
 
 export class PropertyProvider extends Component {
   state = {
+    properties: [],
     propertyData: nullPropertyData,
     loggedIn: false,
     error: null,
@@ -35,23 +39,18 @@ export class PropertyProvider extends Component {
   }
 
   addProperty = (property) => {
-    // console.log(property)
     this.setState({
-      propertyData: {
-        properties: [
-          ...this.state.propertyData.properties,
-          property
-        ]
-      }
+      properties: [
+        ...this.state.properties,
+        property
+      ]
     })
   }
 
   removeProperty = (propertyId) => {
-    const newProperties = this.state.propertyData.properties.filter(p => p.id !== propertyId)
+    const newProperties = this.state.properties.filter(p => p.id !== propertyId)
     this.setState({
-      propertyData: {
-        properties: newProperties
-      }
+      properties: newProperties
     })
   }
 
@@ -77,9 +76,16 @@ export class PropertyProvider extends Component {
     })
   }
 
+  setProperties = (properties) => {
+    this.setState({
+      properties
+    })
+  }
+
   render() {
     const value = {
       loggedIn: this.state.loggedIn,
+      properties: this.state.properties,
       propertyData: this.state.propertyData,
       error: this.state.error,
       setError: this.setError,
@@ -88,7 +94,8 @@ export class PropertyProvider extends Component {
       addProperty: this.addProperty,
       removeProperty: this.removeProperty,
       handleLoginSuccess: this.handleLoginSuccess,
-      handleLogout: this.handleLogout
+      handleLogout: this.handleLogout,
+      setProperties: this.setProperties
     }
     return (
       <PropertyContext.Provider value={value}>

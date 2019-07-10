@@ -6,12 +6,25 @@
   }
   .link-button {
     @include highlighted-button;
+    
     a {
       font-size: 24px;
       color: white;
     }
+
+    &:hover {
+     background: white;
+     box-shadow:0px 0px 0px 4px $button-purple inset;
+      & > a {
+        color: $button-purple;
+      }
+    }
+
+
+
     padding: 10px;
 
 
   }
 }
+

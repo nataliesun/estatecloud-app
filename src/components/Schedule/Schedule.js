@@ -32,6 +32,7 @@ class Schedule extends Component {
   componentDidMount() {
     DateApiService.getDatesForProperty(this.props.match.params.property_id)
       .then(reservations => this.context.setDates(reservations))
+      .catch(this.context.setError)
 
   }
 

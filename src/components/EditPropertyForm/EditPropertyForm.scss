@@ -36,6 +36,14 @@
     @include highlighted-button;
     font-size: 16px;
     border: none;
+    transition: .5s;
+
+    &:hover {
+      box-shadow: none;
+      background: white;
+      color: $button-purple;
+      transform: translate(4px, 2px);
+    }
 
     &:first-of-type {
       margin-right: 10px;

@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import PropertyListItem from '../../components/PropertyListItem/PropertyListItem'
 
-
-
-
 import './PropertyList.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

@@ -19,7 +19,7 @@ class PropertyListItem extends Component {
   }
 
   render() {
-    const { address, id, profit, rent_price } = this.props;
+    const { address, id, rent_price, mortgage_payment } = this.props;
     const propertyLink = `/property/${id}`;
 
     return (
@@ -34,7 +34,7 @@ class PropertyListItem extends Component {
             Rented at: ${rent_price}
           </p>
         }
-        <p>Monthly profit: ${profit}</p>
+        <p>Monthly profit: ${rent_price - mortgage_payment}</p>
         <button className="edit-btn" onClick={() => this.handlePropertyEdit(id)}>
           Edit
         </button>

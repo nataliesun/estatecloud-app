@@ -28,15 +28,22 @@ $main-gradient: linear-gradient(159deg,#512dcf 31%,#10a3d5 100%) #512dcf;
   font-size: 16px;
   cursor: pointer;
   box-shadow: $box-shadow;
+  transition: .5s;
+
+  &:hover {
+      box-shadow: none;
+      transform: translate(4px, 2px);
+    }
+
 }
 
 @mixin big-input {
     border: 1px solid $main-text-color;
     border-radius: 5px;
-    background-color: rgb(92, 92, 92);
+    background-color: rgb(255, 255, 255);
     height: 40px;
     width: 100%;
-    color: white;
+    color: black;
     font-size: 16px;
     padding: 0 20px;
 }

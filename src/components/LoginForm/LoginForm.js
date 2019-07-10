@@ -39,7 +39,7 @@ class LoginForm extends Component {
     const { error } = this.state;
 
     return (
-      <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth} >
+      <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth}>
         <div role="alert">{error && <p className="red">{error}</p>}</div>
         <div className="email">
           <label htmlFor="email">Email</label>
