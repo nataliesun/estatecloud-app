@@ -1,10 +1,43 @@
+
+
+
 # EstateCloud App
 
 > EstateCloud is an app to upload and manage your properties. It tracks monthly profit, estimated portfolio value and availability.
 
+## Main Dashboard
 <img src="./readme_assets/dashboard.png" alt="dashboard" width="450">
 
+## Add a Property
+<img src="./readme_assets/addRes.gif" alt="dashboard" width="450">
+
+## Find Friends and Reserve
+<img src="./readme_assets/findFriends.gif" alt="dashboard" width="450">
+
+## Tech Used
+
+> Client / Frontend
+* React
+* HTML
+* CSS
+
+> Server / Backend
+* Node
+* Express
+* Postgresql
+* Bcrypt
+
+> Deployment
+* Heroku
+* Zeit / Now
+
+## Server Repository
+
+https://github.com/nataliesun/estatecloud-api.git
+
 ## Setting Up
+
+-Clone the repo: `git clone https://github.com/nataliesun/estatecloud-app.git`
 
 -Install dependencies: `npm install`
 

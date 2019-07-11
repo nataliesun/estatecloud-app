@@ -16,6 +16,7 @@ class LandingPage extends Component {
           <p>Upload and edit property information then analyze reservations across your properties and connect with friends.</p>
 
           <Link to="/register">Sign up</Link>
+          <Link to="/demo">Demo</Link>
         </main>
         <section id="video-section">
           <div id="video-div">

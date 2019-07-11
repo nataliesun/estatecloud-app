@@ -20,6 +20,11 @@
     main {
       a {
         background-color: #F47D57;
+
+        &:last-of-type {
+          margin-left: 10px;
+          background-color: rgb(87, 150, 244);
+        }
       }
 
       text-align: center;
@@ -152,9 +157,6 @@
     
     
   }
-
-
-
 
   a {
     text-decoration: none;
