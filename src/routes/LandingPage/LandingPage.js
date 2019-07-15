@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import collecting from './undraw_collecting.svg';
 import noteList from './undraw_note_list.svg'
 import calendar from './undraw_calendar.svg'
-import vid from './addProp.mp4'
+import vid from './AddProp.mp4'
 
 import './LandingPage.scss';
 
@@ -16,7 +16,6 @@ class LandingPage extends Component {
           <p>Upload and edit property information then analyze reservations across your properties and connect with friends.</p>
 
           <Link to="/register">Sign up</Link>
-          <Link to="/demo">Demo</Link>
         </main>
         <section id="video-section">
           <div id="video-div">
