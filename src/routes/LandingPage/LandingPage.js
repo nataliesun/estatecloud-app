@@ -6,6 +6,7 @@ import calendar from './undraw_calendar.svg'
 import vid from './AddProp.mp4'
 
 import './LandingPage.scss';
+import CreateDemoBtn from '../../components/CreateDemoBtn/CreateDemoBtn';
 
 class LandingPage extends Component {
   render() {
@@ -15,7 +16,10 @@ class LandingPage extends Component {
           <h5>Organize and visualize all your property info in one place</h5>
           <p>Upload and edit property information then analyze reservations across your properties and connect with friends.</p>
 
-          <Link to="/register">Sign up</Link>
+          <button>
+            <Link to="/register">Sign up</Link>
+          </button>
+          <CreateDemoBtn />
         </main>
         <section id="video-section">
           <div id="video-div">
@@ -54,7 +58,9 @@ class LandingPage extends Component {
 
         <section id="last-section">
           <h3>Start managing today</h3>
-          <Link to="/register">Get started - it's free!</Link>
+          <button>
+            <Link to="/register">Get started - it's free!</Link>
+          </button>
         </section>
       </div>
     );

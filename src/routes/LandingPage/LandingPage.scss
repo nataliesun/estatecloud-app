@@ -18,12 +18,17 @@
        }
   }
     main {
-      a {
-        background-color: #F47D57;
 
-        &:last-of-type {
-          margin-left: 10px;
-          background-color: rgb(87, 150, 244);
+      button {
+        @include highlighted-button($orange);
+        margin-left: 10px;
+
+        &:first-of-type {
+          background: $light-blue;
+          a {
+            text-decoration: none;
+            color: white;
+          }
         }
       }
 
@@ -40,11 +45,7 @@
         font-family: $sub-font;
         padding: 2vh 8vw;
       }
-      
-      button {
-        @include highlighted-button;
-        padding: 14px 20px;
-      }
+
     }
     
     @keyframes float {
@@ -158,10 +159,7 @@
     
   }
 
-  a {
-    text-decoration: none;
-    @include highlighted-button;
-  }
+
 
   h3 {
     margin: $medium-space 0;
@@ -172,6 +170,15 @@
   #last-section {
     text-align: center;
     padding: 10vh 0;
+
+    button {
+      @include highlighted-button;
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
   }
 }
 
