@@ -1,5 +1,5 @@
 export default {
-    API_ENDPOINT: 'https://estatecloud-server.herokuapp.com/api',
+    API_ENDPOINT: 'http://localhost:8000/api',
     TOKEN_KEY: 'estatecloud-client-auth-token',
 }
 
