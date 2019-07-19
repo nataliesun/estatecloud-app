@@ -38,12 +38,12 @@ class NavBar extends Component {
         </li>
         <li>
           <NavLink to="/addProperty">
-            <FontAwesomeIcon icon="plus" className="blue" /> Property
+            <FontAwesomeIcon icon="plus" /> Property
           </NavLink>
         </li>
         <li>
           <NavLink to='/friends' >
-            <FontAwesomeIcon icon="search" className="blue" />{" "}
+            <FontAwesomeIcon icon="search" />{" "}
             Friends
           </NavLink>
         </li>
@@ -118,7 +118,7 @@ class NavBar extends Component {
 
         <nav className={navClass}>
           <NavLink to="/">
-            <FontAwesomeIcon className="blue" icon="door-open" />
+            <FontAwesomeIcon icon="door-open" />
             <h1>
               EstateCloud
               </h1>

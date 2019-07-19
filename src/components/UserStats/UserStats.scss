@@ -10,6 +10,9 @@
   // box-shadow:  0 4px 8px 0 rgba(172, 172, 172, 0.2), 0 6px 20px 0 rgba(145, 145, 145, 0.19);
   box-shadow: $box-shadow;
   // padding: 20px; 
+  background-color: white;
+// background-color: #a4b2ff60;
+
 
   .stat-container {
     display: flex;
@@ -46,7 +49,7 @@
 
     p {
       padding-top: 10px;
-      color: white;
+      color: $text-color;
       opacity: .35;
     }
   }
@@ -70,14 +73,14 @@
     }
     
     p {
-      color: white;
+      color: $text-color;
       opacity: .35;
     }
   }
 
    h3 {
      font-size: 1.5em;
-    color: white;
+    color: $text-color;
   }
 
 
