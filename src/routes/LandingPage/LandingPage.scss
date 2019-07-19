@@ -16,6 +16,20 @@
     }
   }
 
+  @media screen and (min-width: 376px) {
+    main {
+      padding: 24vh 0;
+      height: 100vh;
+    }
+    
+    #video-section {
+      width: 100vw;
+    }
+    video {
+      max-width: 60vw;
+    }
+  }
+
   overflow: visible;
   padding-left: $medium-space;
   padding-right: $medium-space;
@@ -118,10 +132,12 @@
 
     .contents {
       display: flex;
+  
+   
 
       img {
         flex: 1;
-        height: 250px;
+        height: 200px;
       }
     }
 
@@ -129,7 +145,6 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-
         p {
           flex: 1;
         }
