@@ -44,12 +44,12 @@ $main-gradient: linear-gradient(159deg,#512dcf 31%,#10a3d5 100%) #512dcf;
 }
 
 @mixin big-input {
-    border: 1px solid $main-text-color;
+    border: 3px solid $text-color;
     border-radius: 5px;
-    background-color: rgb(255, 255, 255);
+    background: none;
     height: 40px;
     width: 100%;
-    color: black;
+    color: $text-color;
     font-size: 16px;
     padding: 0 20px;
 }

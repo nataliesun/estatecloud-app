@@ -3,6 +3,8 @@
 .EditPropertyForm {
   padding: 0 20px;
 
+
+
   .input-section{
     display: flex;
     flex-direction: column;
@@ -11,11 +13,11 @@
     label {
       margin-bottom: 10px;
       margin-top: 20px;
+      color: $text-color;
     }
 
     input[type=text], input[type=number] {
       @include big-input;
-      
       &::placeholder {
         color: rgb(133, 133, 133);
       }
@@ -24,6 +26,7 @@
 
   .input-section-row {
     display: flex;
+    color: $text-color;
     
     input[type=radio] {
       margin-right: 20px;

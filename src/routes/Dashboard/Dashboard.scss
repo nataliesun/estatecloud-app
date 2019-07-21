@@ -14,7 +14,7 @@
     overflow: hidden;
   }
 
-    span.wave {
+    span.wave:hover {
   animation-name: wave-animation;
   animation-duration: 2.5s;
   animation-iteration-count: infinite;

@@ -39,12 +39,16 @@ class UserStats extends Component {
           <div className="other-stats">
             {!showChart && <img src={empty} alt="blank_canvas" />}
             {showChart && <Doughnut
+
               data={createAvailabilityChart(availability)}
               options={{
                 maintainAspectRatio: false,
                 responsive: true,
                 legend: {
                   display: false
+                },
+                animation: {
+                  duration: 3000
                 }
               }}
             />}
