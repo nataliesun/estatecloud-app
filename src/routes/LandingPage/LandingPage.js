@@ -36,6 +36,7 @@ class LandingPage extends Component {
             </div>
           </section>
           <section className="description-section">
+
             <h3><span>_</span>02</h3>
             <div className="contents">
               <img src={noteList} alt="collecting" />

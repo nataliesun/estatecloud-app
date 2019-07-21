@@ -4,6 +4,10 @@
   padding: $app-padding;
   overflow: hidden;
 
+  label, div {
+    color: $text-color;
+  }
+
     input {
       @include big-input;
       margin: $app-padding 0;

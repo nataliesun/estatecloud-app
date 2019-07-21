@@ -13,6 +13,11 @@
     padding-bottom: 20px;
   }
 
+  .rbc-date-cell a {
+      color: black;
+    }
+
+
   .breadcrumb {
     display: flex;
     list-style-type: none;
@@ -23,6 +28,10 @@
       color: black;
       content: "/\00a0";
     } 
+
+    li {
+      color: black;
+    }
 
     a {
       color: black;

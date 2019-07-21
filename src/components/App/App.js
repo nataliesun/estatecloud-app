@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import Particles from 'react-particles-js';
 import NavBar from '../NavBar/NavBar'
 import LandingPage from '../../routes/LandingPage/LandingPage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
@@ -33,10 +34,25 @@ class App extends React.Component {
           <NavBar />
         </header>
 
+        <Particles canvasClassName="particles"
+          params={{
+            "interactivity": {
+              "events": {
+                "onhover": {
+                  "enable": true,
+                  "mode": "repulse"
+                }
+              }
+            }
+          }
+          } />
+
+
         <main className="App__main">
           {this.state.hasError && (
             <p className="red">There was an error! Oh no!</p>
           )}
+
           <Switch>
             <PublicOnlyRoute exact path={'/'} component={LandingPage} />
             <PublicOnlyRoute path={'/login'} component={LoginPage} />
@@ -50,6 +66,7 @@ class App extends React.Component {
             <Route component={NotFoundPage} />
           </Switch>
         </main>
+
 
       </div>
     );

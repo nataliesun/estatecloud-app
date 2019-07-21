@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import PropertyList from '../../components/PropertyList/PropertyList';
 import UserStats from '../../components/UserStats/UserStats';
 import PropertyApiService from '../../services/property-api-service';
@@ -46,9 +47,10 @@ class Dashboard extends Component {
     const { availability, portfolio_value } = calculatePropertyInfo(properties)
     return (
       <div className="Dashboard" style={{ "textAlign": "center" }}>
+
         {
           !this.state.name
-          && <h2 className="white">Hello,{" "}{this.state.first_name}! 👋</h2>
+          && <h2 className="white">Hello,{" "}{this.state.first_name}! <span role="img" className="wave" aria-label="wave">👋</span></h2>
         }
         <UserStats
           availability={availability}

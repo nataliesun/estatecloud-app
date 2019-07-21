@@ -7,6 +7,14 @@
   margin: 0 auto;
 
   color: black;
+
+  .particles {
+    position : fixed !important;
+    // display: block;
+    // height:100vh;
+    z-index:-1;
+}
+
 }
 
 .App__header {
@@ -23,7 +31,7 @@
   background: $main-gradient;
 
   h2, a, li {
-    color: $text-color !important;
+    color: $text-color;
   }
 }
 

@@ -89,6 +89,7 @@
   }
 
   .description-section {
+    position: relative;
     display: flex;
     flex-direction: column;
     max-width: 960px;
@@ -186,6 +187,9 @@
       max-width: 60vw;
     }
   }
+
+
+
 
 }
 
