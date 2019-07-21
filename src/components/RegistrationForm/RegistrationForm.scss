@@ -4,12 +4,12 @@
   width: 65%;
   label {
     margin-bottom: 10px;
-     color: $grey-color;
+     color: $text-color;
   }
 
   input {
     @include big-input;
-    border: 3px solid $grey-color;
+    border: 3px solid $text-color;
   }
 
   button {

@@ -1,9 +1,24 @@
 @import '../../components/variables.scss';
 
 .LoginPage {
-  color: $grey-color;
+  width: 30%;
+  margin: 0 auto;
+  color: $text-color;
    display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: $medium-space;
+    padding-bottom: $medium-space * 2;
+  color: $text-color;
+  box-shadow: $box-shadow;
+  border-radius: 20px;
+  background: $main-gradient;
+
+  .NavBar {
+    color: $text-color;
+  }
+
+  @media screen and (max-width: 375px) {
+    width:90%;
+  }
 }
