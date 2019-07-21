@@ -7,10 +7,17 @@
 
 .back {
   // background: linear-gradient(159deg,#512dcf 31%,#10a3d5 100%) #512dcf;
-  background: white;
+  background: $main-gradient;
   padding-bottom: 20px;
   border-radius: 40px;
   margin: 20px 0;
+
+  h1, li, a {
+    color: $text-color !important;
+  }
+  .burger div {
+    background: $text-color !important;
+  }
 }
 
 .NavBar {
@@ -34,7 +41,7 @@
   }
 
   a {
-    color: $text-color;
+    color: $grey-color;
     text-decoration: none;
   }
 
@@ -79,8 +86,9 @@
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: $text-color;
+    background-color: $grey-color;
     margin: 5px;
+    border-radius: 40px;
   }
 
 
@@ -91,8 +99,8 @@
     right: 0px;
     height: 100vh;
     top: 0;
-    // background: $main-gradient;
-    background: white;
+    background: $main-gradient;
+
 
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;

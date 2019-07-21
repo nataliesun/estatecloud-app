@@ -19,3 +19,16 @@
   padding-top: 8vh;
 }
 
+.blue {
+  background: $main-gradient;
+
+  h2, a, li {
+    color: $text-color !important;
+  }
+}
+
+.white {
+  color: white !important;
+}
+
+

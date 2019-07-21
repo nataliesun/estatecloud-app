@@ -22,6 +22,8 @@ class Dashboard extends Component {
 
 
   componentDidMount() {
+    document.body.classList.add("blue");
+    // document.getElementsByTagName("h2").classList.add("white");
 
     this.context.clearError()
     PropertyApiService.getProperties()
@@ -46,7 +48,7 @@ class Dashboard extends Component {
       <div className="Dashboard" style={{ "textAlign": "center" }}>
         {
           !this.state.name
-          && <h2>Hello,{" "}{this.state.first_name}!</h2>
+          && <h2 className="white">Hello,{" "}{this.state.first_name}! 👋</h2>
         }
         <UserStats
           availability={availability}
