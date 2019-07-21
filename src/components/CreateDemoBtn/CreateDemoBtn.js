@@ -44,6 +44,7 @@ class CreateDemoBtn extends Component {
                       .then(reservations => {
 
                         this.context.handleLoginSuccess()
+                        document.body.classList.add("blue")
                         this.props.history.push('/dashboard');
                       })
                   })

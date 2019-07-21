@@ -23,7 +23,7 @@ class Dashboard extends Component {
 
 
   componentDidMount() {
-    document.body.classList.add("blue");
+    // document.body.classList.add("blue");
     // document.getElementsByTagName("h2").classList.add("white");
 
     this.context.clearError()

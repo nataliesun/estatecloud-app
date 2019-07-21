@@ -11,6 +11,7 @@ import PropertyPage from '../../routes/PropertyPage/PropertyPage'
 import PrivateRoute from '../Utils/PrivateRoute';
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
+import TokenService from '../../services/token-service';
 
 
 import './App.scss';
@@ -24,6 +25,12 @@ class App extends React.Component {
   static getDerivedStateFromError(error) {
     console.error(error);
     return { hasError: true };
+  }
+
+  componentDidMount() {
+    if (TokenService.hasAuthToken()) {
+      document.body.classList.add("blue")
+    }
   }
 
   render() {

@@ -3,13 +3,18 @@
 .LoginForm {
   width: 65%;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   label {
     margin-bottom: 10px;
+    color: $grey-color;
   }
 
   input {
-    @include big-input
+    @include big-input;
+    border: 3px solid $grey-color;
   }
 
   button {
