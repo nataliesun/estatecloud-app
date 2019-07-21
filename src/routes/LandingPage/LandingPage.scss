@@ -67,9 +67,13 @@
 
     position: relative;
     #video-div {
-      width: 100vw;
+      width: 98vw;
       display: flex;
       justify-content: center;
+
+      video {
+        width: 100%;
+      }
     }
 
   }
