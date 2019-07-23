@@ -43,11 +43,20 @@ class App extends React.Component {
 
         <Particles canvasClassName="particles"
           params={{
-            "interactivity": {
-              "events": {
-                "onhover": {
-                  "enable": true,
-                  "mode": "repulse"
+            // "interactivity": {
+            //   "events": {
+            //     "onhover": {
+            //       "enable": true,
+            //       "mode": "repulse"
+            //     }
+            //   }
+            // },
+            particles: {
+              number: {
+                value: 45,
+                density: {
+                  enable: true,
+                  value_area: 650
                 }
               }
             }
